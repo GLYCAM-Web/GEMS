@@ -1,16 +1,22 @@
-#!/usr/bin/env python3
 import argparse
 from pathlib import Path
 import json
 import sys
 import os
 
-from gemsModules.systemoperations.filesystem_ops import remove_file_if_exists
 
-GEMS_HOME = os.environ.get("GEMSHOME")
+GEMS_HOME = os.getenv("GEMSHOME")
+sys.path.append(GEMS_HOME)
 if GEMS_HOME is None:
     print(f"Where am I? I can't find the GEMSHOME from here {__file__}. Exiting. (1)")
     sys.exit(1)
+
+
+from gemsModules.delegator.redirector_settings import (
+    Known_Entity_Reception_Modules,
+    DELEGATOR_CONFIG_FILE,
+    BAKED_DELEGATOR_CONFIG_FILE,
+)
 
 
 def argparser():
@@ -30,60 +36,52 @@ def argparser():
 
     return parser.parse_args()
 
-    # generate new entity from template
-
 
 def main():
     args = argparser()
-    config_path = os.path.join(
-        GEMS_HOME, "gemsModules/delegator/baked_config-git-ignore.json"
-    )
 
-    if os.path.isfile(config_path):
-        with open(config_path, "r", encoding="utf-8") as f:
+    if os.path.isfile(DELEGATOR_CONFIG_FILE):
+        with open(DELEGATOR_CONFIG_FILE, "r", encoding="utf-8") as f:
             config = json.load(f)
             old_config = config.copy()
     else:
         config = {}
         old_config = {}
 
-    # add new entity to config file
     new_entity = args.add
     if new_entity:
         if new_entity in config:
-            print(f"{new_entity} already exists in {config_path}. Exiting. (1)")
+            print(
+                f"{new_entity} already exists in {DELEGATOR_CONFIG_FILE}. Exiting. (1)"
+            )
 
         config[new_entity] = new_entity
 
-    # remove entity from config file
     remove_entity = args.remove
     if remove_entity:
         if remove_entity not in config:
-            print(f"{remove_entity} does not exist in {config_path}. Exiting. (1)")
+            print(
+                f"{remove_entity} does not exist in {DELEGATOR_CONFIG_FILE}. Exiting. (1)"
+            )
 
         del config[remove_entity]
 
-    if args.bake or args.unbake:
-        from gemsModules.delegator.redirector_settings import (
-            Known_Entity_Reception_Modules,
-            BAKED_DELEGATOR_CONFIG_FILE,
-        )
-
-        if args.unbake:
-            remove_file_if_exists(BAKED_DELEGATOR_CONFIG_FILE)
-
-        if args.bake:
-            Known_Entity_Reception_Modules.bake()
-
-    # list all entities in config file
     if args.list:
         print(json.dumps(config, indent=4))
         sys.exit(0)
 
-    # save if changed
-    if config != old_config:
-        with open(config_path, "w", encoding="utf-8") as f:
+    config_updated = config != old_config
+    if config_updated:
+        with open(DELEGATOR_CONFIG_FILE, "w", encoding="utf-8") as f:
             json.dump(config, f, sort_keys=True, indent=4)
+
+    if args.unbake or config_updated:
+        if os.path.isfile(BAKED_DELEGATOR_CONFIG_FILE):
+            os.remove(BAKED_DELEGATOR_CONFIG_FILE)
+            print(f"Removed {BAKED_DELEGATOR_CONFIG_FILE}.")
+
+    if args.bake or config_updated:
+        Known_Entity_Reception_Modules.bake()
 
 
 if __name__ == "__main__":

@@ -7,9 +7,9 @@
     "DrawGlycan": "DeprecatedDelegator",
     "MDaaS": "mdaas",
     "MmService": "mmservice",
+    "PDBFile": "PDBFile",
     "Query": "DeprecatedDelegator",
     "Sequence": "DeprecatedDelegator",
     "Status": "status",
-    "StructureFile": "DeprecatedDelegator",
-    "PDBFile": "PDBFile"
+    "StructureFile": "DeprecatedDelegator"
 }

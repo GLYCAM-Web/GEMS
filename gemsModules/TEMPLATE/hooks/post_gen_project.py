@@ -1,5 +1,8 @@
 import glob
+import os
 import re
+import subprocess
+import sys
 
 module_name = "{{cookiecutter.gems_module}}"
 
@@ -33,3 +36,23 @@ for file in python_files:
             buffer = buffer.replace(class_name, capitalize_snake_case(class_name))
     with open(file, "w") as f:
         f.write(buffer)
+
+
+# Let us also add this new Entity to Delegator's known entities.
+if (
+    input(
+        "Would you like to add this new Entity to Delegator's known entities? [y/N] "
+    ).lower()
+    == "y"
+):
+    GEMSHOME = os.getenv("GEMSHOME", "$GEMSHOME")
+    add_cmd = f"python3 {GEMSHOME}/bin/manage_gemsModules.py --add {module_name} --bake"
+
+    if GEMSHOME is None:
+        print(
+            "GEMSHOME is not set, skipping adding new Entity to Delegator's known entities. You may manually run:\n\n"
+            f"{add_cmd}\n\n when you have set GEMSHOME."
+        )
+        sys.exit(0)
+
+    result = subprocess.run(add_cmd.split(" "), env=os.environ.copy())
