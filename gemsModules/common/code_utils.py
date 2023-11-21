@@ -1,4 +1,6 @@
 #!/usr/bin/env python3
+import json
+
 from enum import Enum
 from typing import List
 
@@ -44,6 +46,19 @@ class GemsStrEnum(str, Enum):
         for item in self:
             theList.append(item.name)
         return theList
+
+    @classmethod
+    def from_json_file(cls, path):
+        with open(path, "r") as json_file:
+            data = json.load(json_file)
+            obj = GemsStrEnum("GemsStrEnum", data)
+
+            return obj
+
+    @classmethod
+    def dump_json_file(cls, path):
+        with open(path, "w") as json_file:
+            json.dump(dict(cls.__members__.items()), json_file, indent=4)
 
 
 class Annotated_List(list):
@@ -111,7 +126,7 @@ def find_aaop_by_id(aaop_list: List, id_string: str):
 
     Assumes unique ID_Strings.
 
-    Useful for accessing the requesting AAOP (AAOP.Requester if not None) by ID_String or 
+    Useful for accessing the requesting AAOP (AAOP.Requester if not None) by ID_String or
     it's dependent AAOPs from AAOP.Dependencies.
 
     S/N: I believe we could deprecate this if we rely on AAOP_Tree instead of bare AAOP lists.

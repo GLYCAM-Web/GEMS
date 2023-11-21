@@ -70,7 +70,7 @@ class Redirector_Entity(main_api_entity.Entity):
 
     @validator("entityType")
     def checkEntityType(cls, v):
-        if v not in Known_Entities.__members__.values():
+        if v not in Known_Entities.__members__.keys():
             raise ValueError(
                 f"From Delegator: The requested entity, {v}, is not known. Use entity 'Delegator' and service 'KnownEntities' to get a list of known entities"
             )

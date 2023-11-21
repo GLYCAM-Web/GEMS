@@ -1,4 +1,10 @@
 #!/usr/bin/env python3
+"""A Python script to configure a GEMS instance and it's instance_config.json.
+
+# To force a delegator rebake:
+$  $GEMSHOME/bin/setup-instance.py --rebake-delegator
+
+"""
 import shutil, argparse, os, sys, json, datetime
 
 GemsPath = os.environ.get("GEMSHOME")
@@ -118,6 +124,7 @@ def main():
                     "Cannot generate a remote MD cluster config without adding a host first, please try again."
                 )
 
+            # create the command to run on the MD cluster host
             generating_cmd = (
                 f"python3 $GEMSHOME/bin/setup-instance.py \\\n"
                 f"--add-host '{hostname};[MDaaS-RunMD];{host}:{port}' \\\n"
@@ -132,11 +139,12 @@ def main():
                 f"{generating_cmd}\n\n(Ignore this message if you are in a DevEnv, it has been done for you.)\n"
             )
 
+            # write out a bash script that can be used to generate the remote MD cluster config
             with open(
                 os.path.join(GemsPath, "REMOTE_MD_CLUSTER_HOST_SETUP-git-ignore-me.sh"),
                 "w",
             ) as f:
-                # write bash header
+                # TODO/Q: write bash header? If we don't it's easier to just copy and paste the command from the file.
                 f.write("#!/bin/bash\n\n")
                 f.write(f"{generating_cmd}\n")
                 print(
@@ -146,5 +154,5 @@ def main():
     return ic
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  #
     main()

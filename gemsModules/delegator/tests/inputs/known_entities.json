@@ -1,0 +1,12 @@
+{
+    "entity" : {
+       "type": "Delegator",
+       "services":
+       {
+           "known_entities": {
+                "type": "ListEntities"
+           }
+       }
+     }
+   }
+   

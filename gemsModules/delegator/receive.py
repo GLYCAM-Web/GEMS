@@ -4,6 +4,8 @@ from gemsModules.delegator.json_string_manager import Delegator_Json_String_Mana
 from gemsModules.delegator.main_settings import WhoIAm
 from gemsModules.logging.logger import Set_Up_Logging
 
+from gemsModules.delegator import redirector_settings
+
 log = Set_Up_Logging(__name__)
 
 
@@ -40,23 +42,14 @@ def receive(incomingString: str) -> str:
 
     log.debug("The incoming string is valid")
     requested_entity = string_manager.get_incoming_entity_type()
-    ##########
-    ## NOTE!!!
-    ## this is temporary until Delegator's services work
-    #        log.debug("Delegating incoming string to entity: " + requested_entity)
-    #        from gemsModules.delegator import redirector_settings
-    #        entity_module = redirector_settings.Known_Entity_Reception_Modules[requested_entity]
-    #        return entity_module(incomingString)
-    ##
-    ## This is how it should eventually work:
+
     if requested_entity == WhoIAm:
         log.debug("Delegating incoming string to self")
         return process(incomingString)
     else:
         log.debug("Delegating incoming string to entity: " + requested_entity)
-        from gemsModules.delegator import redirector_settings
 
         entity_module = redirector_settings.Known_Entity_Reception_Modules[
             requested_entity
         ]
-        return entity_module(incomingString)
+        return entity_module.receive(incomingString)

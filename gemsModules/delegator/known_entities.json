@@ -1,0 +1,15 @@
+{
+    "BatchCompute": "DeprecatedDelegator",
+    "Common": "common",
+    "Conjugate": "DeprecatedDelegator",
+    "Delegator": "delegator",
+    "DeprecatedDelegator": "DeprecatedDelegator",
+    "DrawGlycan": "DeprecatedDelegator",
+    "MDaaS": "mdaas",
+    "MmService": "mmservice",
+    "Query": "DeprecatedDelegator",
+    "Sequence": "DeprecatedDelegator",
+    "Status": "status",
+    "StructureFile": "DeprecatedDelegator",
+    "PDBFile": "PDBFile"
+}

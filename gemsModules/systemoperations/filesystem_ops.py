@@ -1,7 +1,8 @@
+import json
 import os, glob, shutil
 from pathlib import Path
 
-
+import gemsModules
 from gemsModules.logging.logger import Set_Up_Logging
 
 log = Set_Up_Logging(__name__)
@@ -118,3 +119,87 @@ def replace_bash_variable_in_file(path, vars: dict[str, any]):
         with open(path, "w") as f:
             f.writelines(lines)
             return True
+
+
+#
+def file_exists(File_Path: str) -> bool:
+    return os.path.isfile(File_Path)
+
+
+def remove_file_if_exists(path):
+    """Remove a file at path if it exists."""
+    if os.path.isfile(path):
+        os.remove(path)
+
+
+def directory_exists(Dir_Path: str) -> bool:
+    return os.path.isdir(Dir_Path)
+
+
+def get_last_folder_of_path(path) -> str:
+    """Get the last folder of path."""
+    return str(Path(path).parts[-1])
+
+
+def get_parent_path(path) -> str:
+    """Get the parent path of path."""
+    return str(Path(path).parent)
+
+
+def get_relative_path(path, root=None) -> str:
+    """Get the relative path of path to root or $CWD."""
+    if root:
+        return str(Path(path).relative_to(Path(root)))
+    else:
+        return str(Path(path).relative_to(Path.cwd()))
+
+
+def get_file_path_in_parent_dir(path, file):
+    return build_filesystem_path(get_parent_path(path), file)
+
+
+def get_relative_path_to_gemsModules(path) -> str:
+    """Get the relative path of path to gemsModules.
+
+    This will fail if the path is not a subdirectory of gemsModules.
+    """
+    return str(Path(path).relative_to(Path(gemsModules.__path__[0])))
+
+
+def path_to_import_path(path) -> str:
+    """Convert a path to a Python import path."""
+    return ".".join(Path(path).parts)
+
+
+def gemsModules_path_to_import_path(path) -> str:
+    """Convert a service path to a Python import path.
+
+    This will fail if the path is not a subdirectory of gemsModules.
+    """
+    path = get_relative_path_to_gemsModules(path)
+    return path_to_import_path(path)
+
+
+def glob_matching_files(pattern, root, recursive=True):
+    """Find all files matching pattern under root."""
+    if recursive:
+        pattern = f"**/{pattern}"
+
+    return glob.glob(str(Path(root) / pattern), recursive=recursive)
+
+
+def glob_matching_gemsModules_files(pattern, recursive=True):
+    """Find all files matching pattern under gemsModules."""
+    return glob_matching_files(pattern, gemsModules.__path__[0], recursive=True)
+
+
+def dump_dict_to_json_file(dict, path):
+    """Dump dict to a json file at path."""
+    with open(path, "w") as f:
+        json.dump(dict, f, indent=4)
+
+
+def load_json_file(path):
+    """Load a json file at path to a dict."""
+    with open(path, "r") as f:
+        return json.load(f)
