@@ -11,6 +11,9 @@ from gemsModules.systemoperations.filesystem_ops import (
     dump_dict_to_json_file,
     remove_file_if_exists,
 )
+from gemsModules.systemoperations.environment_ops import (
+    is_GEMS_test_workflow,
+)
 from gemsModules.logging.logger import Set_Up_Logging
 
 log = Set_Up_Logging(__name__)
@@ -54,9 +57,11 @@ class KERM(dict):
         self.known_entities = known_entities
 
         super().__init__()
-        self.load()
 
-        log.debug(f"Known_Entity_Reception_Modules: {self}")
+        # Note: Forcing rebaking in test workflows to avoid complications with known_entities.json desyncing for now.
+        self.load(force_rebake=is_GEMS_test_workflow())
+
+        # log.debug(f"Known_Entity_Reception_Modules: {self}")
 
     def __getitem__(self, key):
         log.debug("Known_Entity_Reception_Modules[%s] accessed.", key)
@@ -78,15 +83,15 @@ class KERM(dict):
         """
         self.__load_deprecated_delegator()
 
-        # Load the baked config if it exists, otherwise bake it.
-        if file_exists(BAKED_DELEGATOR_CONFIG_FILE) and not force_rebake:
-            log.debug("Loading baked config from %s", BAKED_DELEGATOR_CONFIG_FILE)
-            reception_config = load_json_file(BAKED_DELEGATOR_CONFIG_FILE)
-            for entity_typename, config in reception_config.items():
-                self.__try_load_reception_module(entity_typename, config)
-        else:
-            log.debug("Baking config to %s", BAKED_DELEGATOR_CONFIG_FILE)
+        # Rebake the config if it doesn't exist or if force_rebake is True.
+        if not file_exists(BAKED_DELEGATOR_CONFIG_FILE) or force_rebake:
             self.bake()
+
+        # Load the baked config.
+        # log.debug("Loading baked config from %s", BAKED_DELEGATOR_CONFIG_FILE)
+        reception_config = load_json_file(BAKED_DELEGATOR_CONFIG_FILE)
+        for entity_typename, config in reception_config.items():
+            self.__try_load_reception_module(entity_typename, config)
 
         return self
 
