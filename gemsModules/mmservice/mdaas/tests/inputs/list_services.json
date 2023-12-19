@@ -1,0 +1,11 @@
+{
+    "entity" : {
+    "type": "MDaaS",
+    "services" :
+        { "listserv" : {
+            "type" : "ListServices" 
+            }
+        }
+    }
+}
+   
