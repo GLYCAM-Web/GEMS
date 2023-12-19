@@ -1,0 +1,11 @@
+{
+    "entity" : {
+       "type": "Delegator",
+       "services" :
+       { "listserv" : {
+           "type" : "ListServices" 
+         }
+       }
+     }
+   }
+   

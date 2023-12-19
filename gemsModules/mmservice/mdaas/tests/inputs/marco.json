@@ -1,0 +1,11 @@
+{
+	"entity": {
+		"type": "MDaaS",
+		"services": {
+			"some_marco": {
+				"type": "Marco"
+			}
+		}
+	},
+	"prettyPrint" : true
+}

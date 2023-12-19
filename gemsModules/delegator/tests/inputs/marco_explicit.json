@@ -2,11 +2,9 @@
  "entity" : {
     "type": "Delegator",
     "services" :
-        { "Marco" :
-                {
-			"type" : "Marco" 
-		 
-		}
-        }
+    { "Marco" : {
+        "type" : "Marco" 
+      }
+    }
   }
 }

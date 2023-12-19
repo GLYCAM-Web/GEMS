@@ -2,7 +2,7 @@ from gemsModules.delegator.services.settings.known_available import Available_Se
 from typing import List, Dict
 
 
-def execute() -> List:
+def execute(entity: str) -> List:
     """Return a list of available services
 
     >>> print(execute())
