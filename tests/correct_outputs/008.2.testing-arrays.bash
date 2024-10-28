@@ -8,13 +8,20 @@ Build2Tests=(
 	BuildDefaultSymlink
 	MinGasPdb
 )
-declare -A Build2Commands=(
+
+PDB_File_To_Test="${sequenceBuildsPath}/${build_2_pUUID}/New_Builds/${test_conformer_id}/min-gas.pdb"
+Subtest_2_Ref_PDB="${Subtest_2_Ref_PDB_Start}/${test_conformer_id}/min-gas.pdb"
+# [MinGasPdb]="md5sum ${sequenceBuildsPath}/${build_2_pUUID}/New_Builds/${test_conformer_id}/min-gas.pdb | cut -d ' ' -f1"
+# [MinGasPdb]="974e16c495ffee8c6d6581eb5d75d501"
+declare -A Build2Commands
+Build2Commands=(
 	[ListRSeqsSeqID]="/bin/ls -R ${sequenceSequencesPath}/${theCorrectSequenceID}"
 	[ListRRequestedBuilds]="/bin/ls -R ${sequenceBuildsPath}/${build_2_pUUID}/Requested_Builds"
 	[BuildDefaultSymlink]="file ${sequenceBuildsPath}/${build_2_pUUID}/default"
-	[MinGasPdb]="md5sum ${sequenceBuildsPath}/${build_2_pUUID}/New_Builds/${test_conformer_id}/min-gas.pdb | cut -d ' ' -f1"
+	[MinGasPdb]="diff ${PDB_File_To_Test} ${Subtest_2_Ref_PDB} 2>&1"
 )
-declare -A Build2CorrectOutputs=(
+declare -A Build2CorrectOutputs
+Build2CorrectOutputs=(
 	[ListRSeqsSeqID]="""${sequenceSequencesPath}/00e7d454-06dd-5067-b6c9-441dd52db586:
 buildStrategyID1
 current
@@ -34,7 +41,7 @@ e6c2e2e8-758b-58b8-b5ff-d138da38dd22"""
 8ddcc916-47db-5426-828c-fc24aae19d39
 ce32017d-6663-5ecc-b282-9e9812986d1c"""
 	[BuildDefaultSymlink]="${sequenceBuildsPath}/${build_2_pUUID}/default: symbolic link to New_Builds/ce32017d-6663-5ecc-b282-9e9812986d1c"
-	[MinGasPdb]="974e16c495ffee8c6d6581eb5d75d501"
+	[MinGasPdb]=""
 )
 
 ## syntax reminder:

@@ -11,6 +11,8 @@
 ##        You can use this method to run disabled tests.
 ##        Exmpl: run_tests.sh 007.test.DrawGlycan.sh
 ##
+##  If GEMS_KEEP_BAD_OUTPUTS is set to "True", badOutputs will not be removed after testing
+##
 export badOutDir='bad_outputs'
 START=$SECONDS
 run_test() 
@@ -35,8 +37,11 @@ if [ "${1}zzz" != "zzz" ] ; then
 	fi
 	if run_test ${1} ; then 
 		echo "The test passed."
-    	echo "removing bad outputs directory"
-    	rm -rf ${badOutDir}
+        if [ "${GEMS_KEEP_BAD_OUTPUTS}" != "True" ] ; then
+	    echo "GEMS_KEEP_BAD_OUTPUTS is ${GEMS_KEEP_BAD_OUTPUTS}"
+            echo "removing bad outputs directory"
+            rm -rf ${badOutDir}
+        fi
     	exit 0
 	else
     	echo "The test failed."
@@ -80,8 +85,11 @@ Testing time: "$MIN:$SEC
 
 if [ "$tests_passed" -ge "$required_passing_tests" ]; then 
     echo "The required number of tests passed"
-    echo "removing bad outputs directory"
-    rm -rf ${badOutDir}
+    if [ "${GEMS_KEEP_BAD_OUTPUTS}" != "True" ] ; then
+	    echo "GEMS_KEEP_BAD_OUTPUTS is ${GEMS_KEEP_BAD_OUTPUTS}"
+        echo "removing bad outputs directory"
+        rm -rf ${badOutDir}
+    fi
     exit 0
 fi
 echo "Some required tests did not pass."

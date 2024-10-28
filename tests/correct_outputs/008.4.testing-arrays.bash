@@ -5,13 +5,15 @@ EvaluationTests=(
 	ExistingSymlink
 	DiffCountJsonOutput
 )
-defaultConformerID=e6c2e2e8-758b-58b8-b5ff-d138da38dd22
-declare -A EvaluationCommands=(
+defaultConformerID="e6c2e2e8-758b-58b8-b5ff-d138da38dd22"
+declare -A EvaluationCommands
+EvaluationCommands=(
 	[ListRBuild]="/bin/ls -R ${sequenceBuildsPath}/${eval_2_pUUID}"
 	[ExistingSymlink]="file ${sequenceBuildsPath}/${eval_2_pUUID}/Existing_Builds/$defaultConformerID"
 	[DiffCountJsonOutput]="diff -U 0 ${sequenceBuildsPath}/${eval_2_pUUID}/logs/response.json ${sequenceSequencesPath}/${theCorrectSequenceID}/evaluation.json | grep -v ^@ | wc -l"
 )
-declare -A EvaluationCorrectOutputs=(
+declare -A EvaluationCorrectOutputs
+EvaluationCorrectOutputs=(
     [ListRBuild]="""${sequenceBuildsPath}/${eval_2_pUUID}:
 Existing_Builds
 New_Builds

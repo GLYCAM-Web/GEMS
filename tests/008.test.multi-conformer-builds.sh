@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# If GEMS_KEEP_BAD_OUTPUTS is set to "True", badOutputs will not be removed after testing
+
 . './utilities/common_environment.bash'
 . './utilities/functions.bash'
 
@@ -22,6 +24,8 @@ build_2_input="${GEMSHOME}/tests/inputs/008.2.build-request-second-two.json"
 build_3_input="${GEMSHOME}/tests/inputs/008.3.build-request-third-four.json"
 build_5_input="${GEMSHOME}/tests/inputs/008.5.build-request-NotDefault.json"
 build_6_input="${GEMSHOME}/tests/inputs/008.6.build-request-NoRotamers.json"
+
+source 'correct_outputs/008_reference_data.bash'
 
 do_the_common_tasks() {	
 	jsonInFile="${1}"
@@ -55,6 +59,19 @@ do_the_common_tasks() {
 	return 0
 }
 
+copyTestOutputDirectoryTree()
+{	# Remove all outputs in Builds and Sequences to test New_Builds functionality
+	#  $1 should be an integer, 0-6, corresponding to the subtest
+	echo "Copying the output directory, if it exists, to the badOut directory."
+	if [ ! -d "${sequenceServicePath}" ] ; then
+	    echo "Outputs directory not found:  ${sequenceServicePath}" >> $badOutput
+        else
+    	    mkdir -p ${badOutDir}/${now}/${1}
+    	    cp -a ${sequenceServicePath} ${badOutDir}/${now}/${1}/
+        fi
+    	return 0
+}
+
 deleteTestOutputFolders()
 {	# Remove all outputs in Builds and Sequences to test New_Builds functionality
 	echo "Checking for sequence service path."
@@ -73,6 +90,8 @@ echo """
 ## Sub test 0:  Evaluation
 ################################################################################"""
 source './sub_parts/008.0.sub-test.bash'
+copyTestOutputDirectoryTree 0
+
 
 if [ "${ALL_TESTS_PASSED}" == "true" ] ; then
 	echo """
@@ -80,6 +99,7 @@ if [ "${ALL_TESTS_PASSED}" == "true" ] ; then
 ## Sub test 1:  build first two conformers
 ################################################################################"""
 	source './sub_parts/008.1.sub-test.bash'
+	copyTestOutputDirectoryTree 1
 fi
 
 if [ "${ALL_TESTS_PASSED}" == "true" ] ; then
@@ -88,6 +108,7 @@ if [ "${ALL_TESTS_PASSED}" == "true" ] ; then
 ## Sub test 2:  build two more two conformers
 ################################################################################"""
 	source './sub_parts/008.2.sub-test.bash'
+	copyTestOutputDirectoryTree 2
 fi
 
 if [ "${ALL_TESTS_PASSED}" == "true" ] ; then
@@ -96,6 +117,7 @@ if [ "${ALL_TESTS_PASSED}" == "true" ] ; then
 ## Sub test 3:  build two new and two existing conformers
 ################################################################################"""
 	source './sub_parts/008.3.sub-test.bash'
+	copyTestOutputDirectoryTree 3
 fi
 
 if [ "${ALL_TESTS_PASSED}" == "true" ] ; then
@@ -103,7 +125,8 @@ if [ "${ALL_TESTS_PASSED}" == "true" ] ; then
 ################################################################################
 ## Sub test 4:  Do the Evaluation again.
 ################################################################################"""
-    source './sub_parts/008.4.sub-test.bash'
+	source './sub_parts/008.4.sub-test.bash'
+	copyTestOutputDirectoryTree 4
 fi
 
 if [ "${ALL_TESTS_PASSED}" == "true" ] ; then
@@ -114,6 +137,7 @@ if [ "${ALL_TESTS_PASSED}" == "true" ] ; then
     deleteTestOutputFolders
     source './sub_parts/008.0.sub-test.bash' # Must do an evaluation first because bugs.
     source './sub_parts/008.5.sub-test.bash'
+    copyTestOutputDirectoryTree 5
 fi
 
 if [ "${ALL_TESTS_PASSED}" == "true" ] ; then
@@ -123,6 +147,7 @@ if [ "${ALL_TESTS_PASSED}" == "true" ] ; then
 ################################################################################"""
     deleteTestOutputFolders
     source './sub_parts/008.6.sub-test.bash'
+    copyTestOutputDirectoryTree 6
 fi
 
 
@@ -135,5 +160,7 @@ if [ "${ALL_TESTS_PASSED}" == "false" ] ; then
 fi
 ## Clean up.
 deleteTestOutputFolders
-remove_file_if_found ${badOutput}
+if [ ${GEMS_KEEP_BAD_OUTPUTS} != "True" ] ; then
+	remove_file_if_found ${badOutput}
+fi
 return 0;
