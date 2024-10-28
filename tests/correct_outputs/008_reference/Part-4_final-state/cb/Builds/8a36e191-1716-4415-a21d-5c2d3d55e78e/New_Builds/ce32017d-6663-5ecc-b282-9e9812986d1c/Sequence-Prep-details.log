@@ -1,0 +1,340 @@
+Run log begun on Wed Oct 23 01:04:57 EDT 2024 
+This build appears to be running in a Slurm cluster.:
+The current host is gw-slurm-amber-1:
+The build will run on these hosts:
+gw-slurm-amber-1
+Sourcing amber.sh 
+...Sourcing of AMBERHOME[=/programs/amber]/amber.sh completed on Wed Oct 23 01:04:57 EDT 2024
+
+Building and minimizing the gas-phase system.
+
+Running tleap to generate gas-phase input files. 
+-I: Adding /programs/amber/dat/leap/prep to search path.
+-I: Adding /programs/amber/dat/leap/lib to search path.
+-I: Adding /programs/amber/dat/leap/parm to search path.
+-I: Adding /programs/amber/dat/leap/cmd to search path.
+-f: Source unminimized-gas.leapin.
+
+Welcome to LEaP!
+(no leaprc in search path)
+Sourcing: ./unminimized-gas.leapin
+Log file: ./unminimized-gas.leaplog
+----- Source: /programs/amber/dat/leap/cmd/leaprc.GLYCAM_06j-1
+----- Source of /programs/amber/dat/leap/cmd/leaprc.GLYCAM_06j-1 done
+Loading parameters: /programs/amber/dat/leap/parm/GLYCAM_06j.dat
+Reading title:
+GLYCAM_06_H PARAMETERS (FOR AMBER 11.0, RESP 0.010), COPYRIGHT CCRC 2011
+Loading Prep file: /programs/amber/dat/leap/prep/GLYCAM_06j-1.prep
+Loading library: /programs/amber/dat/leap/lib/GLYCAM_amino_06j_12SB.lib
+Loading library: /programs/amber/dat/leap/lib/GLYCAM_aminoct_06j_12SB.lib
+Loading library: /programs/amber/dat/leap/lib/GLYCAM_aminont_06j_12SB.lib
+Loading library: /programs/amber/dat/leap/lib/solvents.lib
+Loading library: /programs/amber/dat/leap/lib/atomic_ions.lib
+Loading parameters: /programs/amber/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+Loading parameters: ./frcmod.glycam06_intraring_doublebond_protonatedacids
+Reading force field modification type file (frcmod)
+Reading title:
+MASS
+Loading library: ./structure.off
+Checking 'CONDENSEDSEQUENCE'....
+
+/programs/amber/bin/teLeap: Warning!
+The unperturbed charge of the unit (-4.000000) is not zero.
+
+/programs/amber/bin/teLeap: Warning!
+Close contact of 1.433294 angstroms between .R<4YB 6>.A<H3M 25> and .R<4YB 9>.A<H3M 25>
+Checking parameters for unit 'CONDENSEDSEQUENCE'.
+Checking for bond parameters.
+Checking for angle parameters.
+check:  Warnings: 2
+Unit is OK.
+Checking Unit.
+
+/programs/amber/bin/teLeap: Warning!
+The unperturbed charge of the unit (-4.000000) is not zero.
+
+/programs/amber/bin/teLeap: Note.
+Ignoring the warning from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 24 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+ (no restraints)
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 3; Notes = 1.
+...Gas-phase tleap processing completed on Wed Oct 23 01:04:57 EDT 2024
+Running the Gas-Phase Minimization 
+found local info file
+This is the command for part min
+sander -O   -i min-gas.in  -o min-gas.o  -e min-gas.en  -p unminimized-gas.parm7  -c unminimized-gas.rst7  -r min-gas.restrt.nc  -x min-gas.nc  -inf min-gas.info 
+...Gas-phase minimization completed on Wed Oct 23 01:04:57 EDT 2024
+
+NOT building and minimizing the solvated systems.
+
+Running cpptraj to convert gas-phase output to convenient formats 
+
+CPPTRAJ: Trajectory Analysis. V18.01
+    ___  ___  ___  ___
+     | \/ | \/ | \/ | 
+    _|_/\_|_/\_|_/\_|_
+
+| Date/time: 10/23/24 01:04:57
+| Available memory: 4.353 GB
+
+INPUT: Reading input from 'min-gas.cpptrajin'
+  [parm unminimized-gas.parm7]
+	Reading 'unminimized-gas.parm7' as Amber Topology
+	Radius Set: modified Bondi radii (mbondi)
+  [trajin min-gas.restrt.nc]
+	Reading 'min-gas.restrt.nc' as Amber NC Restart
+  [trajout min-gas.mol2]
+	Writing 'min-gas.mol2' as Mol2
+  [trajout min-gas.pdb]
+	Writing 'min-gas.pdb' as PDB
+---------- RUN BEGIN -------------------------------------------------
+
+PARAMETER FILES (1 total):
+ 0: unminimized-gas.parm7, 456 atoms, 18 res, box: None, 1 mol
+
+INPUT TRAJECTORIES (1 total):
+ 0: 'min-gas.restrt.nc' is a NetCDF AMBER restart file with coordinates, time, Parm unminimized-gas.parm7 (reading 1 of 1)
+  Coordinate processing will occur on 1 frames.
+
+OUTPUT TRAJECTORIES (2 total):
+  'min-gas.mol2' (1 frames) is a Tripos Mol2 file
+  'min-gas.pdb' (1 frames) is a PDB file
+
+BEGIN TRAJECTORY PROCESSING:
+.....................................................
+ACTIVE OUTPUT TRAJECTORIES (2):
+  min-gas.mol2 (coordinates, time)
+  min-gas.pdb (coordinates, time)
+----- min-gas.restrt.nc (1-1, 1) -----
+100% Complete.
+
+Read 1 frames and processed 1 frames.
+TIME: Avg. throughput= 811.0300 frames / second.
+
+ACTION OUTPUT:
+TIME: Analyses took 0.0000 seconds.
+
+RUN TIMING:
+TIME:		Init               : 0.0000 s (  0.48%)
+TIME:		Trajectory Process : 0.0012 s ( 98.48%)
+TIME:		Action Post        : 0.0000 s (  0.00%)
+TIME:		Analysis           : 0.0000 s (  0.00%)
+TIME:		Data File Write    : 0.0000 s (  0.08%)
+TIME:		Other              : 0.0000 s (  0.01%)
+TIME:	Run Total 0.0013 s
+---------- RUN END ---------------------------------------------------
+TIME: Total execution time: 0.0025 seconds.
+--------------------------------------------------------------------------------
+To cite CPPTRAJ use:
+Daniel R. Roe and Thomas E. Cheatham, III, "PTRAJ and CPPTRAJ: Software for
+  Processing and Analysis of Molecular Dynamics Trajectory Data". J. Chem.
+  Theory Comput., 2013, 9 (7), pp 3084-3095.
+
+...Post-gas-phase cpptraj processing completed on Wed Oct 23 01:04:57 EDT 2024
+
+Working on TIP3P solvated version.
+
+Running tleap to build the Tip3P solvated structures 
+-I: Adding /programs/amber/dat/leap/prep to search path.
+-I: Adding /programs/amber/dat/leap/lib to search path.
+-I: Adding /programs/amber/dat/leap/parm to search path.
+-I: Adding /programs/amber/dat/leap/cmd to search path.
+-f: Source unminimized-t3p.leapin.
+
+Welcome to LEaP!
+(no leaprc in search path)
+Sourcing: ./unminimized-t3p.leapin
+Log file: ./unminimized-t3p.leaplog
+----- Source: /programs/amber/dat/leap/cmd/leaprc.GLYCAM_06j-1
+----- Source of /programs/amber/dat/leap/cmd/leaprc.GLYCAM_06j-1 done
+Loading parameters: /programs/amber/dat/leap/parm/GLYCAM_06j.dat
+Reading title:
+GLYCAM_06_H PARAMETERS (FOR AMBER 11.0, RESP 0.010), COPYRIGHT CCRC 2011
+Loading Prep file: /programs/amber/dat/leap/prep/GLYCAM_06j-1.prep
+Loading library: /programs/amber/dat/leap/lib/GLYCAM_amino_06j_12SB.lib
+Loading library: /programs/amber/dat/leap/lib/GLYCAM_aminoct_06j_12SB.lib
+Loading library: /programs/amber/dat/leap/lib/GLYCAM_aminont_06j_12SB.lib
+Loading library: /programs/amber/dat/leap/lib/solvents.lib
+Loading library: /programs/amber/dat/leap/lib/atomic_ions.lib
+Loading parameters: /programs/amber/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+Loading parameters: ./frcmod.glycam06_intraring_doublebond_protonatedacids
+Reading force field modification type file (frcmod)
+Reading title:
+MASS
+Loading parameters: /programs/amber/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+Loading Mol2 file: ./min-gas.mol2
+Reading MOLECULE named Cpptraj generated mol2 file.
+4 Na+ ions required to neutralize.
+Adding 4 counter ions to "mol" using 1A grid
+Grid extends from solute vdw + 1.37  to  7.28
+Resolution:      1.00 Angstrom.
+ (no solvent present)
+Calculating grid charges
+Placed Na+ in mol at (-20.19, 21.61, -8.15).
+Placed Na+ in mol at (5.81, 25.61, 0.85).
+Placed Na+ in mol at (-21.19, 17.61, 0.85).
+Placed Na+ in mol at (2.81, 34.61, -10.15).
+
+Done adding ions.
+Cl- has a charge of 0.
+addIons: Can't neutralize.
+Scaling up box by a factor of 1.322434 to meet diagonal cut criterion
+  Solute vdw bounding box:              36.917 30.035 29.573
+  Total bounding box for atom centers:  68.656 68.656 68.656
+      (box expansion for 'iso' is  24.5%)
+  Solvent unit box:                     18.774 18.774 18.774
+  Volume: 168982.986 A^3 (oct)
+  Total mass 89075.000 amu,  Density 0.875 g/cc
+  Added 4743 residues.
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 24 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	0SA	4
+	4YB	6
+	6LB	4
+	ROH	1
+	VMB	1
+	WAT	4743
+	XMA	1
+	YMA	1
+  )
+ (no restraints)
+Writing pdb file: unminimized-t3p.pdb
+   printing CRYST1 record to PDB file with box info
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 0; Notes = 0.
+...Solvent-phase (T3P) tleap processing completed on Wed Oct 23 01:04:58 EDT 2024
+
+Working on TIP5P solvated version.
+
+Running tleap to build the Tip5P solvated structures 
+-I: Adding /programs/amber/dat/leap/prep to search path.
+-I: Adding /programs/amber/dat/leap/lib to search path.
+-I: Adding /programs/amber/dat/leap/parm to search path.
+-I: Adding /programs/amber/dat/leap/cmd to search path.
+-f: Source unminimized-t5p.leapin.
+
+Welcome to LEaP!
+(no leaprc in search path)
+Sourcing: ./unminimized-t5p.leapin
+Log file: ./unminimized-t5p.leaplog
+----- Source: /programs/amber/dat/leap/cmd/leaprc.GLYCAM_06j-1
+----- Source of /programs/amber/dat/leap/cmd/leaprc.GLYCAM_06j-1 done
+Loading parameters: /programs/amber/dat/leap/parm/GLYCAM_06j.dat
+Reading title:
+GLYCAM_06_H PARAMETERS (FOR AMBER 11.0, RESP 0.010), COPYRIGHT CCRC 2011
+Loading Prep file: /programs/amber/dat/leap/prep/GLYCAM_06j-1.prep
+Loading library: /programs/amber/dat/leap/lib/GLYCAM_amino_06j_12SB.lib
+Loading library: /programs/amber/dat/leap/lib/GLYCAM_aminoct_06j_12SB.lib
+Loading library: /programs/amber/dat/leap/lib/GLYCAM_aminont_06j_12SB.lib
+Loading library: /programs/amber/dat/leap/lib/solvents.lib
+Loading library: /programs/amber/dat/leap/lib/atomic_ions.lib
+Loading parameters: /programs/amber/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+Loading parameters: ./frcmod.glycam06_intraring_doublebond_protonatedacids
+Reading force field modification type file (frcmod)
+Reading title:
+MASS
+Loading parameters: /programs/amber/dat/leap/parm/frcmod.tip5p
+Reading force field modification type file (frcmod)
+Reading title:
+This is the additional/replacement parameter set for TIP5P
+Loading Mol2 file: ./min-gas.mol2
+Reading MOLECULE named Cpptraj generated mol2 file.
+4 Na+ ions required to neutralize.
+Adding 4 counter ions to "mol" using 1A grid
+Grid extends from solute vdw + 1.37  to  7.28
+Resolution:      1.00 Angstrom.
+ (no solvent present)
+Calculating grid charges
+Placed Na+ in mol at (-20.19, 21.61, -8.15).
+Placed Na+ in mol at (5.81, 25.61, 0.85).
+Placed Na+ in mol at (-21.19, 17.61, 0.85).
+Placed Na+ in mol at (2.81, 34.61, -10.15).
+
+Done adding ions.
+Cl- has a charge of 0.
+addIons: Can't neutralize.
+Scaling up box by a factor of 1.322434 to meet diagonal cut criterion
+  Solute vdw bounding box:              36.917 30.035 29.573
+  Total bounding box for atom centers:  68.656 68.656 68.656
+      (box expansion for 'iso' is  24.5%)
+  Solvent unit box:                     21.897 21.897 21.897
+  Volume: 168982.986 A^3 (oct)
+  Total mass 86768.952 amu,  Density 0.853 g/cc
+  Added 4615 residues.
+Checking Unit.
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 24 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+  (Residues lacking connect0/connect1 - 
+   these don't have chain types marked:
+
+	res	total affected
+
+	0SA	4
+	4YB	6
+	6LB	4
+	ROH	1
+	VMB	1
+	WAT	4615
+	XMA	1
+	YMA	1
+  )
+ (no restraints)
+Writing pdb file: unminimized-t5p.pdb
+   printing CRYST1 record to PDB file with box info
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 0; Notes = 0.
+...Solvent-phase (T5P) tleap processing completed on Wed Oct 23 01:04:58 EDT 2024
+
+Got to end of /website/TESTS/git-ignore-me/pre-push/sequence/cb/Builds/8a36e191-1716-4415-a21d-5c2d3d55e78e/New_Builds/ce32017d-6663-5ecc-b282-9e9812986d1c/Minimize.bash
+

@@ -1,0 +1,520 @@
+{
+  "timestamp": "2024-10-23_01:04:33",
+  "entity": {
+    "type": "Sequence",
+    "requestID": null,
+    "services": {
+      "evaluation": {
+        "type": "Evaluate",
+        "givenName": null,
+        "myUuid": null,
+        "inputs": null,
+        "options": null
+      }
+    },
+    "responses": null,
+    "resources": null,
+    "notices": null,
+    "procedural_options": {
+      "context": "website",
+      "force_serial_execution": false,
+      "use_library": true,
+      "strict_library": true,
+      "build_default_on_evaluation": true,
+      "md_minimize": true,
+      "number_structures_hard_limit": 8
+    },
+    "options": null,
+    "inputs": {
+      "sequence": {
+        "payload": "DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-2[DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-4]DManpa1-3[DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-2[DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-6]DManpa1-6]DManpb1-4DGlcpNAcb1-4DGlcpNAcb1-OH",
+        "format": "GlycamCondensed"
+      },
+      "sequenceVariants": null,
+      "systemSolvationOptions": null,
+      "geometryOptions": null,
+      "buildOptions": null,
+      "evaluationOptions": null,
+      "drawOptions": null
+    },
+    "outputs": {
+      "sequenceEvaluationOutput": {
+        "sequenceIsValid": true,
+        "sequenceVariants": {
+          "indexOrdered": "DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-2[DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-4]DManpa1-3[DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-2[DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-6]DManpa1-6]DManpb1-4DGlcpNAcb1-4DGlcpNAcb1-OH",
+          "longestChainOrdered": "Currently unavailble in gmml. Request if needed!",
+          "userOrdered": "DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-2[DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-4]DManpa1-3[DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-2[DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-6]DManpa1-6]DManpb1-4DGlcpNAcb1-4DGlcpNAcb1-OH",
+          "monospacedTextDiagram": null,
+          "indexOrderedLabeled": "DNeup5Ac&Label=residue-18;a2-6&Label=link-16;DGalp&Label=residue-17;b1-4&Label=link-15;DGlcpNAc&Label=residue-16;b1-2&Label=link-14;[DNeup5Ac&Label=residue-15;a2-6&Label=link-13;DGalp&Label=residue-14;b1-4&Label=link-12;DGlcpNAc&Label=residue-13;b1-4&Label=link-11;]DManp&Label=residue-12;a1-3&Label=link-10;[DNeup5Ac&Label=residue-11;a2-6&Label=link-9;DGalp&Label=residue-10;b1-4&Label=link-8;DGlcpNAc&Label=residue-9;b1-2&Label=link-7;[DNeup5Ac&Label=residue-8;a2-6&Label=link-6;DGalp&Label=residue-7;b1-4&Label=link-5;DGlcpNAc&Label=residue-6;b1-6&Label=link-4;]DManp&Label=residue-5;a1-6&Label=link-3;]DManp&Label=residue-4;b1-4&Label=link-2;DGlcpNAc&Label=residue-3;b1-4&Label=link-1;DGlcpNAc&Label=residue-2;b1-&Label=link-0;OH&Label=residue-1;",
+          "longestChainOrderedLabeled": null,
+          "userOrderedLabeled": null,
+          "monospacedTextDiagramLabeled": null,
+          "suuid": "00e7d454-06dd-5067-b6c9-441dd52db586",
+          "smd5sum": null
+        },
+        "evaluationOptions": {
+          "validateOnly": false,
+          "evaluateForBuild": false,
+          "noBuild": false
+        },
+        "buildOptions": {
+          "solvationOptions": null,
+          "geometryOptions": {
+            "residues": null,
+            "linkages": {
+              "linkageRotamerInfo": {
+                "singleLinkageRotamerDataList": [
+                  {
+                    "indexOrderedLabel": "3",
+                    "linkageLabel": null,
+                    "linkageName": "DManpa1-6DManpb",
+                    "firstResidueNumber": "5",
+                    "secondResidueNumber": "4",
+                    "dihedralsWithOptions": [
+                      "Omg"
+                    ],
+                    "possibleRotamers": [
+                      {
+                        "dihedralName": "Omg",
+                        "dihedralValues": [
+                          "gg",
+                          "gt",
+                          "tg"
+                        ]
+                      }
+                    ],
+                    "likelyRotamers": [
+                      {
+                        "dihedralName": "Omg",
+                        "dihedralValues": [
+                          "gg",
+                          "gt"
+                        ]
+                      }
+                    ],
+                    "selectedRotamers": [
+                      {
+                        "dihedralName": "Omg",
+                        "dihedralValues": [
+                          "gg",
+                          "gt"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "indexOrderedLabel": "4",
+                    "linkageLabel": null,
+                    "linkageName": "DGlcNAcpb1-6DManpa",
+                    "firstResidueNumber": "6",
+                    "secondResidueNumber": "5",
+                    "dihedralsWithOptions": [
+                      "Omg"
+                    ],
+                    "possibleRotamers": [
+                      {
+                        "dihedralName": "Omg",
+                        "dihedralValues": [
+                          "gg",
+                          "gt",
+                          "tg"
+                        ]
+                      }
+                    ],
+                    "likelyRotamers": [
+                      {
+                        "dihedralName": "Omg",
+                        "dihedralValues": [
+                          "gg",
+                          "gt"
+                        ]
+                      }
+                    ],
+                    "selectedRotamers": [
+                      {
+                        "dihedralName": "Omg",
+                        "dihedralValues": [
+                          "gg",
+                          "gt"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "indexOrderedLabel": "6",
+                    "linkageLabel": null,
+                    "linkageName": "DNeu5Acpa2-6DGalpb",
+                    "firstResidueNumber": "8",
+                    "secondResidueNumber": "7",
+                    "dihedralsWithOptions": [
+                      "Phi",
+                      "Omg"
+                    ],
+                    "possibleRotamers": [
+                      {
+                        "dihedralName": "Phi",
+                        "dihedralValues": [
+                          "t",
+                          "-g"
+                        ]
+                      },
+                      {
+                        "dihedralName": "Omg",
+                        "dihedralValues": [
+                          "gg",
+                          "gt",
+                          "tg"
+                        ]
+                      }
+                    ],
+                    "likelyRotamers": [
+                      {
+                        "dihedralName": "Phi",
+                        "dihedralValues": [
+                          "t",
+                          "-g"
+                        ]
+                      },
+                      {
+                        "dihedralName": "Omg",
+                        "dihedralValues": [
+                          "gg",
+                          "gt",
+                          "tg"
+                        ]
+                      }
+                    ],
+                    "selectedRotamers": [
+                      {
+                        "dihedralName": "Phi",
+                        "dihedralValues": [
+                          "t",
+                          "-g"
+                        ]
+                      },
+                      {
+                        "dihedralName": "Omg",
+                        "dihedralValues": [
+                          "gg",
+                          "gt",
+                          "tg"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "indexOrderedLabel": "9",
+                    "linkageLabel": null,
+                    "linkageName": "DNeu5Acpa2-6DGalpb",
+                    "firstResidueNumber": "11",
+                    "secondResidueNumber": "10",
+                    "dihedralsWithOptions": [
+                      "Phi",
+                      "Omg"
+                    ],
+                    "possibleRotamers": [
+                      {
+                        "dihedralName": "Phi",
+                        "dihedralValues": [
+                          "t",
+                          "-g"
+                        ]
+                      },
+                      {
+                        "dihedralName": "Omg",
+                        "dihedralValues": [
+                          "gg",
+                          "gt",
+                          "tg"
+                        ]
+                      }
+                    ],
+                    "likelyRotamers": [
+                      {
+                        "dihedralName": "Phi",
+                        "dihedralValues": [
+                          "t",
+                          "-g"
+                        ]
+                      },
+                      {
+                        "dihedralName": "Omg",
+                        "dihedralValues": [
+                          "gg",
+                          "gt",
+                          "tg"
+                        ]
+                      }
+                    ],
+                    "selectedRotamers": [
+                      {
+                        "dihedralName": "Phi",
+                        "dihedralValues": [
+                          "t",
+                          "-g"
+                        ]
+                      },
+                      {
+                        "dihedralName": "Omg",
+                        "dihedralValues": [
+                          "gg",
+                          "gt",
+                          "tg"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "indexOrderedLabel": "13",
+                    "linkageLabel": null,
+                    "linkageName": "DNeu5Acpa2-6DGalpb",
+                    "firstResidueNumber": "15",
+                    "secondResidueNumber": "14",
+                    "dihedralsWithOptions": [
+                      "Phi",
+                      "Omg"
+                    ],
+                    "possibleRotamers": [
+                      {
+                        "dihedralName": "Phi",
+                        "dihedralValues": [
+                          "t",
+                          "-g"
+                        ]
+                      },
+                      {
+                        "dihedralName": "Omg",
+                        "dihedralValues": [
+                          "gg",
+                          "gt",
+                          "tg"
+                        ]
+                      }
+                    ],
+                    "likelyRotamers": [
+                      {
+                        "dihedralName": "Phi",
+                        "dihedralValues": [
+                          "t",
+                          "-g"
+                        ]
+                      },
+                      {
+                        "dihedralName": "Omg",
+                        "dihedralValues": [
+                          "gg",
+                          "gt",
+                          "tg"
+                        ]
+                      }
+                    ],
+                    "selectedRotamers": [
+                      {
+                        "dihedralName": "Phi",
+                        "dihedralValues": [
+                          "t",
+                          "-g"
+                        ]
+                      },
+                      {
+                        "dihedralName": "Omg",
+                        "dihedralValues": [
+                          "gg",
+                          "gt",
+                          "tg"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "indexOrderedLabel": "16",
+                    "linkageLabel": null,
+                    "linkageName": "DNeu5Acpa2-6DGalpb",
+                    "firstResidueNumber": "18",
+                    "secondResidueNumber": "17",
+                    "dihedralsWithOptions": [
+                      "Phi",
+                      "Omg"
+                    ],
+                    "possibleRotamers": [
+                      {
+                        "dihedralName": "Phi",
+                        "dihedralValues": [
+                          "t",
+                          "-g"
+                        ]
+                      },
+                      {
+                        "dihedralName": "Omg",
+                        "dihedralValues": [
+                          "gg",
+                          "gt",
+                          "tg"
+                        ]
+                      }
+                    ],
+                    "likelyRotamers": [
+                      {
+                        "dihedralName": "Phi",
+                        "dihedralValues": [
+                          "t",
+                          "-g"
+                        ]
+                      },
+                      {
+                        "dihedralName": "Omg",
+                        "dihedralValues": [
+                          "gg",
+                          "gt",
+                          "tg"
+                        ]
+                      }
+                    ],
+                    "selectedRotamers": [
+                      {
+                        "dihedralName": "Phi",
+                        "dihedralValues": [
+                          "t",
+                          "-g"
+                        ]
+                      },
+                      {
+                        "dihedralName": "Omg",
+                        "dihedralValues": [
+                          "gg",
+                          "gt",
+                          "tg"
+                        ]
+                      }
+                    ]
+                  }
+                ],
+                "totalLikelyRotamers": "5184",
+                "totalPossibleRotamers": "11664",
+                "totalSelectedRotamers": 0
+              }
+            }
+          },
+          "mdMinimize": true,
+          "numberStructuresHardLimit": 1
+        },
+        "drawOptions": null
+      },
+      "structureBuildInfo": {
+        "incomingSequence": "DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-2[DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-4]DManpa1-3[DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-2[DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-6]DManpa1-6]DManpb1-4DGlcpNAcb1-4DGlcpNAcb1-OH",
+        "indexOrderedSequence": "DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-2[DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-4]DManpa1-3[DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-2[DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-6]DManpa1-6]DManpb1-4DGlcpNAcb1-4DGlcpNAcb1-OH",
+        "seqID": "00e7d454-06dd-5067-b6c9-441dd52db586",
+        "individualBuildDetails": [
+          {
+            "date": "2024-10-23T01:04:33.361520",
+            "status": "new",
+            "payload": "",
+            "pUUID": "2100a048-5f8c-4646-bd77-a4bd8a17501b",
+            "entity_id": "sequence",
+            "service_id": "cb",
+            "incomingSequence": "",
+            "indexOrderedSequence": "DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-2[DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-4]DManpa1-3[DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-2[DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-6]DManpa1-6]DManpb1-4DGlcpNAcb1-4DGlcpNAcb1-OH",
+            "seqID": "",
+            "conformerID": "e6c2e2e8-758b-58b8-b5ff-d138da38dd22",
+            "conformerLabel": "3ogg_4ogg_6ht_ogg_9ht_ogg_13ht_ogg_16ht_ogg",
+            "sequenceConformation": [
+              "3",
+              "o",
+              "gg",
+              "4",
+              "o",
+              "gg",
+              "6",
+              "h",
+              "t",
+              "6",
+              "o",
+              "gg",
+              "9",
+              "h",
+              "t",
+              "9",
+              "o",
+              "gg",
+              "13",
+              "h",
+              "t",
+              "13",
+              "o",
+              "gg",
+              "16",
+              "h",
+              "t",
+              "16",
+              "o",
+              "gg"
+            ],
+            "isDefaultStructure": true,
+            "isGlobalDefaultStructure": true,
+            "isNewBuild": true,
+            "structureDirectoryName": "e6c2e2e8-758b-58b8-b5ff-d138da38dd22",
+            "filesystem_path": "/website/TESTS/git-ignore-me/pre-push",
+            "host_url_base_path": "https://172.25.0.2",
+            "conformer_path": "/website/TESTS/git-ignore-me/pre-push/sequence/cb/Builds/2100a048-5f8c-4646-bd77-a4bd8a17501b/Requested_Builds/e6c2e2e8-758b-58b8-b5ff-d138da38dd22",
+            "absolute_conformer_path": "/website/TESTS/git-ignore-me/pre-push/sequence/cb/Builds/2100a048-5f8c-4646-bd77-a4bd8a17501b/New_Builds/e6c2e2e8-758b-58b8-b5ff-d138da38dd22",
+            "downloadUrlPath": "https://172.25.0.2/json/download/sequence/cb/2100a048-5f8c-4646-bd77-a4bd8a17501b/e6c2e2e8-758b-58b8-b5ff-d138da38dd22/",
+            "forceField": "See Build Directory Files"
+          }
+        ],
+        "buildStrategyID": "buildStrategyID1"
+      }
+    }
+  },
+  "project": {
+    "pUUID": "2100a048-5f8c-4646-bd77-a4bd8a17501b",
+    "title": "",
+    "comment": "",
+    "timestamp": "2024-10-23T01:04:33.300089",
+    "gems_timestamp": "2024-10-23T01:04:33.300089",
+    "project_type": "cb",
+    "parent_entity": "Sequence",
+    "requested_service": "Build3DStructure",
+    "entity_id": "sequence",
+    "service_id": "cb",
+    "filesystem_path": "/website/TESTS/git-ignore-me/pre-push",
+    "compute_cluster_filesystem_path": "",
+    "service_dir": "/website/TESTS/git-ignore-me/pre-push/sequence/cb",
+    "project_dir": "/website/TESTS/git-ignore-me/pre-push/sequence/cb/Builds/2100a048-5f8c-4646-bd77-a4bd8a17501b",
+    "logs_dir": "/website/TESTS/git-ignore-me/pre-push/sequence/cb/Builds/2100a048-5f8c-4646-bd77-a4bd8a17501b/logs",
+    "requesting_agent": "",
+    "has_input_files": false,
+    "site_version": "4edb572d06e8fa3785ec89b07683a26273c92d7c",
+    "site_branch": "web-test",
+    "site_code_name": "Developer-Environment",
+    "gems_version": "25d4a0d2b63e3ce98148dae921db6cad7a413c49",
+    "gems_branch": "gems-test",
+    "md_utils_version": "4ee984ab350cc3a36daa8a80beb5055bd260b536",
+    "md_utils_branch": "bugfix-merge-run-multipart",
+    "gmml_version": "b3e60b4c2926372f2d6544146fd5f1044075dd0c",
+    "gmml_branch": "gmml-test",
+    "gp_version": "",
+    "gp_branch": "",
+    "site_mode": "CONTAINERS",
+    "site_host_name": "172.25.0.2",
+    "versions_file_path": "/website/userdata/VERSIONS.sh",
+    "host_url_base_path": "https://172.25.0.2",
+    "download_url_path": "https://172.25.0.2/json/download/sequence/cb/2100a048-5f8c-4646-bd77-a4bd8a17501b/",
+    "force_field": "default",
+    "parameter_version": "default",
+    "amber_version": "default",
+    "json_api_version": "0.0.1",
+    "django_project_id": "",
+    "app": "project",
+    "force_use_this_project": false,
+    "notices": [],
+    "sequence_id": "00e7d454-06dd-5067-b6c9-441dd52db586",
+    "sequence_path": "/website/TESTS/git-ignore-me/pre-push/sequence/cb/Sequences/00e7d454-06dd-5067-b6c9-441dd52db586",
+    "indexOrderedSequence": "DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-2[DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-4]DManpa1-3[DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-2[DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-6]DManpa1-6]DManpb1-4DGlcpNAcb1-4DGlcpNAcb1-OH",
+    "seqID": "00e7d454-06dd-5067-b6c9-441dd52db586",
+    "selected_rotamers": ""
+  },
+  "prettyPrint": true,
+  "mdMinimize": true,
+  "options": null,
+  "notices": []
+}

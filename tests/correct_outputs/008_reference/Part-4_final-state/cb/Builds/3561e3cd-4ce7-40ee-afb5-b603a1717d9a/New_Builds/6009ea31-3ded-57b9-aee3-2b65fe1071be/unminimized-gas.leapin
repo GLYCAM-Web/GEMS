@@ -1,0 +1,15 @@
+verbosity 0
+logfile unminimized-gas.leaplog
+source leaprc.GLYCAM_06j-1 
+loadamberparams frcmod.glycam06_intraring_doublebond_protonatedacids
+loadoff structure.off 
+## 
+## The term CONDENSEDSEQUENCE is defined in the file structure.off
+##     at the very top of the file.  The term is used throughout
+##     the file as well.  If your off file uses a different name/label
+##     for your structure, then you should change the next two 
+##     lines accordingly.
+check CONDENSEDSEQUENCE 
+saveamberparm CONDENSEDSEQUENCE unminimized-gas.parm7 unminimized-gas.rst7
+quit
+

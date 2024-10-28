@@ -1,0 +1,17 @@
+{
+  "entity": {
+    "type": "Sequence",
+    "services": {
+      "evaluation": {
+        "type": "Evaluate"
+      }
+    },
+    "inputs": {
+      "sequence": {
+        "payload": "DManpa1-OH",
+        "sequenceFormat": "GlycamCondensed"
+      }
+    }
+  },
+  "prettyPrint": true
+}

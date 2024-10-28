@@ -1,0 +1,4 @@
+parm unminimized-t5p.parm7
+trajin min-t5p.restrt.nc
+trajout min-t5p.mol2
+trajout min-t5p.pdb

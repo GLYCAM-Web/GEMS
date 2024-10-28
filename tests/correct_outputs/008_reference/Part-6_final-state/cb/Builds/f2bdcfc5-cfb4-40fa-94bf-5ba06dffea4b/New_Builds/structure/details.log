@@ -1,0 +1,34 @@
+Details log begun on Wed Oct 23 01:05:38 EDT 2024
+TEST WORKFLOW IS: Yes
+TEST WORKFLOW STEPS IS: 1
+Beginning MD simulations on Wed Oct 23 01:05:38 EDT 2024
+Working directory is /website/TESTS/git-ignore-me/pre-push/sequence/cb/Builds/f2bdcfc5-cfb4-40fa-94bf-5ba06dffea4b/New_Builds/structure 
+Using info from file: 'Run-Gas-Min-Parameters.bash'. 
+Notice: The environment defines AMBERHOME as: /programs/amber
+
+This script will use the following as AMBERHOME:
+AMBERHOME = /programs/amber
+
+
+AMBERHOME/amber.sh was sourced.  
+The output is between the two following strings of '=' signs:
+===============================================================
+
+===============================================================
+
+
+There will be 1 phases to this simulation: 
+
+Phase 1 
+	- is called min 
+	- has prefix min-gas 
+	- is described as: Minimize gas-phase structure, dielectric=80
+
+	Starting phase min
+
+		The command is:
+		sander -O   -i min-gas.in  -o min-gas.o  -e min-gas.en  -p unminimized-gas.parm7  -c unminimized-gas.rst7  -r min-gas.restrt.nc  -x min-gas.nc  -inf min-gas.info 
+
+		
+Phase min finished normally after 0m 0s.
+Simulation finished normally.

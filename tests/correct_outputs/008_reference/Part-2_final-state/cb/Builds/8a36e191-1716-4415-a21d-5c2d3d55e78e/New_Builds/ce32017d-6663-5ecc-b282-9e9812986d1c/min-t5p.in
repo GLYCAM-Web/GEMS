@@ -1,0 +1,9 @@
+Constant Volume Minimization
+ &cntrl
+  imin = 1, maxcyc = 10000, ncyc = 10000,
+  cut = 8.0,
+  ntxo = 2, ntwr = 500, ntpr = 500, 
+  ntr = 1,
+  restraintmask = '!:WAT= & !@H=',
+  restraint_wt = 5.0,
+ &end 

@@ -1,0 +1,119 @@
+{
+	"entity": 
+	{
+		"type": "Sequence", 
+		"services": 
+		{
+			"build": 
+			{
+				"type": "Build3DStructure"
+			}
+		}, 
+		"inputs": 
+		{
+			"sequence": 
+			{
+				"payload": "DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-2[DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-4]DManpa1-3[DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-2[DNeup5Aca2-6DGalpb1-4DGlcpNAcb1-6]DManpa1-6]DManpb1-4DGlcpNAcb1-4DGlcpNAcb1-OH"
+			}, 
+			"geometryOptions": 
+			{"linkages": 
+				{
+					"linkageRotamerInfo": 
+					{
+						"singleLinkageRotamerDataList": 
+						[
+							{
+								"indexOrderedLabel": "3", 
+								"linkageLabel": "3", 
+								"selectedRotamers": 
+								[
+									{
+										"dihedralName": "omg", 
+										"dihedralValues": ["gg", "gt"]
+									}
+								]
+							}, 
+							{
+								"indexOrderedLabel": "4", 
+								"linkageLabel": "4", 
+								"selectedRotamers": 
+								[
+									{
+										"dihedralName": "omg", 
+										"dihedralValues": ["gg"]
+									}
+								]
+							}, 
+							{
+								"indexOrderedLabel": "6", 
+								"linkageLabel": "6", 
+								"selectedRotamers": 
+								[
+									{
+										"dihedralName": "phi", 
+										"dihedralValues": ["t"]
+									}, 
+									{
+										"dihedralName": "omg", 
+										"dihedralValues": ["gg"]
+									}
+								]
+							}, 
+							{
+								"indexOrderedLabel": "9", 
+								"linkageLabel": "9", 
+								"selectedRotamers": 
+								[
+									{
+										"dihedralName": "phi", 
+										"dihedralValues": ["t"]
+									}, 
+									{
+										"dihedralName": "omg", 
+										"dihedralValues": ["gg"]
+									}
+								]
+							}, 
+							{
+								"indexOrderedLabel": "13", 
+								"linkageLabel": "13", 
+								"selectedRotamers": 
+								[
+									{
+										"dihedralName": "phi", 
+										"dihedralValues": ["t"]
+									}, 
+									{
+										"dihedralName": "omg", 
+										"dihedralValues": ["gg"]
+									}
+								]
+							}, 
+							{
+								"indexOrderedLabel": "16", 
+								"linkageLabel": "16", 
+								"selectedRotamers": 
+								[
+									{
+										"dihedralName": "phi", 
+										"dihedralValues": ["-g"]
+									}, 
+									{
+										"dihedralName": "omg", 
+										"dihedralValues": ["gg"]
+									}
+								]
+							}
+						]
+					}
+				}
+			}, 
+			"buildOptions": 
+			{
+				"mdMinimize": "True"
+			}
+		}
+	}, 
+	"prettyPrint": "True", 
+	"mdMinimize": "True"
+}

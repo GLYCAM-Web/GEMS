@@ -1,0 +1,164 @@
+{
+  "timestamp": "2024-10-23_01:05:37",
+  "entity": {
+    "type": "Sequence",
+    "requestID": null,
+    "services": {
+      "evaluation": {
+        "type": "Evaluate",
+        "givenName": null,
+        "myUuid": null,
+        "inputs": null,
+        "options": null
+      }
+    },
+    "responses": null,
+    "resources": null,
+    "notices": null,
+    "procedural_options": {
+      "context": "website",
+      "force_serial_execution": false,
+      "use_library": true,
+      "strict_library": true,
+      "build_default_on_evaluation": true,
+      "md_minimize": true,
+      "number_structures_hard_limit": 8
+    },
+    "options": null,
+    "inputs": {
+      "sequence": {
+        "payload": "DManpa1-OH",
+        "format": "GlycamCondensed"
+      },
+      "sequenceVariants": null,
+      "systemSolvationOptions": null,
+      "geometryOptions": null,
+      "buildOptions": null,
+      "evaluationOptions": null,
+      "drawOptions": null
+    },
+    "outputs": {
+      "sequenceEvaluationOutput": {
+        "sequenceIsValid": true,
+        "sequenceVariants": {
+          "indexOrdered": "DManpa1-OH",
+          "longestChainOrdered": "Currently unavailble in gmml. Request if needed!",
+          "userOrdered": "DManpa1-OH",
+          "monospacedTextDiagram": null,
+          "indexOrderedLabeled": "DManp&Label=residue-2;a1-&Label=link-0;OH&Label=residue-1;",
+          "longestChainOrderedLabeled": null,
+          "userOrderedLabeled": null,
+          "monospacedTextDiagramLabeled": null,
+          "suuid": "fc6085c0-822c-5655-b5be-88da496814cb",
+          "smd5sum": null
+        },
+        "evaluationOptions": {
+          "validateOnly": false,
+          "evaluateForBuild": false,
+          "noBuild": false
+        },
+        "buildOptions": {
+          "solvationOptions": null,
+          "geometryOptions": {
+            "residues": null,
+            "linkages": {
+              "linkageRotamerInfo": {
+                "singleLinkageRotamerDataList": [],
+                "totalLikelyRotamers": 1,
+                "totalPossibleRotamers": 1,
+                "totalSelectedRotamers": 1
+              }
+            }
+          },
+          "mdMinimize": true,
+          "numberStructuresHardLimit": 1
+        },
+        "drawOptions": null
+      },
+      "structureBuildInfo": {
+        "incomingSequence": "DManpa1-OH",
+        "indexOrderedSequence": "DManpa1-OH",
+        "seqID": "fc6085c0-822c-5655-b5be-88da496814cb",
+        "individualBuildDetails": [
+          {
+            "date": "2024-10-23T01:05:37.264059",
+            "status": "new",
+            "payload": "",
+            "pUUID": "f2bdcfc5-cfb4-40fa-94bf-5ba06dffea4b",
+            "entity_id": "sequence",
+            "service_id": "cb",
+            "incomingSequence": "",
+            "indexOrderedSequence": "DManpa1-OH",
+            "seqID": "",
+            "conformerID": "structure",
+            "conformerLabel": "structure",
+            "sequenceConformation": [],
+            "isDefaultStructure": true,
+            "isGlobalDefaultStructure": true,
+            "isNewBuild": true,
+            "structureDirectoryName": "structure",
+            "filesystem_path": "/website/TESTS/git-ignore-me/pre-push",
+            "host_url_base_path": "https://172.25.0.2",
+            "conformer_path": "/website/TESTS/git-ignore-me/pre-push/sequence/cb/Builds/f2bdcfc5-cfb4-40fa-94bf-5ba06dffea4b/Requested_Builds/structure",
+            "absolute_conformer_path": "/website/TESTS/git-ignore-me/pre-push/sequence/cb/Builds/f2bdcfc5-cfb4-40fa-94bf-5ba06dffea4b/New_Builds/structure",
+            "downloadUrlPath": "https://172.25.0.2/json/download/sequence/cb/f2bdcfc5-cfb4-40fa-94bf-5ba06dffea4b/structure/",
+            "forceField": "See Build Directory Files"
+          }
+        ],
+        "buildStrategyID": "buildStrategyID1"
+      }
+    }
+  },
+  "project": {
+    "pUUID": "f2bdcfc5-cfb4-40fa-94bf-5ba06dffea4b",
+    "title": "",
+    "comment": "",
+    "timestamp": "2024-10-23T01:05:37.238530",
+    "gems_timestamp": "2024-10-23T01:05:37.238530",
+    "project_type": "cb",
+    "parent_entity": "Sequence",
+    "requested_service": "Build3DStructure",
+    "entity_id": "sequence",
+    "service_id": "cb",
+    "filesystem_path": "/website/TESTS/git-ignore-me/pre-push",
+    "compute_cluster_filesystem_path": "",
+    "service_dir": "/website/TESTS/git-ignore-me/pre-push/sequence/cb",
+    "project_dir": "/website/TESTS/git-ignore-me/pre-push/sequence/cb/Builds/f2bdcfc5-cfb4-40fa-94bf-5ba06dffea4b",
+    "logs_dir": "/website/TESTS/git-ignore-me/pre-push/sequence/cb/Builds/f2bdcfc5-cfb4-40fa-94bf-5ba06dffea4b/logs",
+    "requesting_agent": "",
+    "has_input_files": false,
+    "site_version": "4edb572d06e8fa3785ec89b07683a26273c92d7c",
+    "site_branch": "web-test",
+    "site_code_name": "Developer-Environment",
+    "gems_version": "25d4a0d2b63e3ce98148dae921db6cad7a413c49",
+    "gems_branch": "gems-test",
+    "md_utils_version": "4ee984ab350cc3a36daa8a80beb5055bd260b536",
+    "md_utils_branch": "bugfix-merge-run-multipart",
+    "gmml_version": "b3e60b4c2926372f2d6544146fd5f1044075dd0c",
+    "gmml_branch": "gmml-test",
+    "gp_version": "",
+    "gp_branch": "",
+    "site_mode": "CONTAINERS",
+    "site_host_name": "172.25.0.2",
+    "versions_file_path": "/website/userdata/VERSIONS.sh",
+    "host_url_base_path": "https://172.25.0.2",
+    "download_url_path": "https://172.25.0.2/json/download/sequence/cb/f2bdcfc5-cfb4-40fa-94bf-5ba06dffea4b/",
+    "force_field": "default",
+    "parameter_version": "default",
+    "amber_version": "default",
+    "json_api_version": "0.0.1",
+    "django_project_id": "",
+    "app": "project",
+    "force_use_this_project": false,
+    "notices": [],
+    "sequence_id": "fc6085c0-822c-5655-b5be-88da496814cb",
+    "sequence_path": "/website/TESTS/git-ignore-me/pre-push/sequence/cb/Sequences/fc6085c0-822c-5655-b5be-88da496814cb",
+    "indexOrderedSequence": "DManpa1-OH",
+    "seqID": "fc6085c0-822c-5655-b5be-88da496814cb",
+    "selected_rotamers": ""
+  },
+  "prettyPrint": true,
+  "mdMinimize": true,
+  "options": null,
+  "notices": []
+}

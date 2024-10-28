@@ -1,0 +1,4 @@
+parm unminimized-t3p.parm7
+trajin min-t3p.restrt.nc
+trajout min-t3p.mol2
+trajout min-t3p.pdb

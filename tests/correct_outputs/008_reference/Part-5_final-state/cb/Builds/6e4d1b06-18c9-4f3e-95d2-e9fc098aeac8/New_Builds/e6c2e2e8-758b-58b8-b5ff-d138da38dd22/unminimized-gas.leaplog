@@ -1,0 +1,1734 @@
+log started: Wed Oct 23 01:05:17 2024
+
+Log file: ./unminimized-gas.leaplog
+> source leaprc.GLYCAM_06j-1 
+----- Source: /programs/amber/dat/leap/cmd/leaprc.GLYCAM_06j-1
+----- Source of /programs/amber/dat/leap/cmd/leaprc.GLYCAM_06j-1 done
+>> # ----- leaprc for loading the Glycam_06 carbohydrate force field
+>> # also contains atom types for lipids
+>> #
+>> #       load atom type hybridizations
+>> #	(includes atom types relevant to lipids)
+>> #
+>> addAtomTypes {
+>>         { "C"   "C" "sp2" }
+>>         { "Cg"  "C" "sp3" }
+>>         { "Cy"  "C" "sp3" }
+>>         { "Ck"  "C" "sp2" }
+>>         { "CT"  "C" "sp3" }
+>>         { "Cj"  "C" "sp2" }
+>>         { "Cp"  "C" "sp3" } 
+>>         { "H"   "H" "sp3" }
+>>         { "H1"  "H" "sp3" }
+>>         { "H2"  "H" "sp3" }
+>>         { "Ha"  "H" "sp3" }
+>>         { "Hp"  "H" "sp3" } 
+>>         { "Hc"  "H" "sp3" }
+>>         { "Ho"  "H" "sp3" }
+>>         { "HW"  "H" "sp3" }
+>> 	{ "Ng"  "N" "sp2" }
+>>         { "NT"  "N" "sp3" }
+>>         { "N3"  "N" "sp3" } 
+>>         { "Oh"  "O" "sp3" }
+>>         { "Os"  "O" "sp3" }
+>>         { "O"   "O" "sp2" }
+>>         { "O2"  "O" "sp2" }
+>>         { "OW"  "O" "sp3" }
+>>         { "Oy"  "O" "sp3" }
+>>         { "S"   "S" "sp3" }
+>>         { "Sm"  "S" "sp3" }
+>>         { "P"   "P" "sp3" } 
+>> }
+>> #
+>> #       load the main paramter set
+>> #
+>> glycam_06 = loadamberparams GLYCAM_06j.dat
+Loading parameters: /programs/amber/dat/leap/parm/GLYCAM_06j.dat
+Reading title:
+GLYCAM_06_H PARAMETERS (FOR AMBER 11.0, RESP 0.010), COPYRIGHT CCRC 2011
+>> ##
+>> #
+>> #       load all prep files for polysaccharides
+>> #
+>> loadamberprep GLYCAM_06j-1.prep
+Loading Prep file: /programs/amber/dat/leap/prep/GLYCAM_06j-1.prep
+(UNKNOWN ATOM TYPE: C0)
+(UNKNOWN ATOM TYPE: N)
+(UNKNOWN ATOM TYPE: N)
+(UNKNOWN ATOM TYPE: N)
+(UNKNOWN ATOM TYPE: CX)
+(UNKNOWN ATOM TYPE: 2C)
+(UNKNOWN ATOM TYPE: 3C)
+(UNKNOWN ATOM TYPE: CX)
+Loaded UNIT: 0AA
+Loaded UNIT: 0AB
+Loaded UNIT: 0AD
+Loaded UNIT: 0AE
+Loaded UNIT: 0AF
+Loaded UNIT: 0AU
+Loaded UNIT: 0BA
+Loaded UNIT: 0BB
+Loaded UNIT: 0BC
+Loaded UNIT: 0BD
+Loaded UNIT: 0BU
+Loaded UNIT: 0CA
+Loaded UNIT: 0CB
+Loaded UNIT: 0CD
+Loaded UNIT: 0CU
+Loaded UNIT: 0DA
+Loaded UNIT: 0DB
+Loaded UNIT: 0DD
+Loaded UNIT: 0DU
+Loaded UNIT: 0EA
+Loaded UNIT: 0EB
+Loaded UNIT: 0FA
+Loaded UNIT: 0FB
+Loaded UNIT: 0GA
+Loaded UNIT: 0GB
+Loaded UNIT: 0GL
+Loaded UNIT: 0HA
+Loaded UNIT: 0HB
+Loaded UNIT: 0JA
+Loaded UNIT: 0JB
+Loaded UNIT: 0JD
+Loaded UNIT: 0JU
+Loaded UNIT: 0KA
+Loaded UNIT: 0KB
+Loaded UNIT: 0LA
+Loaded UNIT: 0LB
+Loaded UNIT: 0MA
+Loaded UNIT: 0MB
+Loaded UNIT: 0NA
+Loaded UNIT: 0NB
+Loaded UNIT: 0OA
+Loaded UNIT: 0OB
+Loaded UNIT: 0PA
+Loaded UNIT: 0PB
+Loaded UNIT: 0PD
+Loaded UNIT: 0PU
+Loaded UNIT: 0QA
+Loaded UNIT: 0QB
+Loaded UNIT: 0RA
+Loaded UNIT: 0RB
+Loaded UNIT: 0RD
+Loaded UNIT: 0RU
+Loaded UNIT: 0SA
+Loaded UNIT: 0SB
+Loaded UNIT: 0TA
+Loaded UNIT: 0TB
+Loaded UNIT: 0TV
+Loaded UNIT: 0Tv
+Loaded UNIT: 0UA
+Loaded UNIT: 0UB
+Loaded UNIT: 0VA
+Loaded UNIT: 0VB
+Loaded UNIT: 0WA
+Loaded UNIT: 0WB
+Loaded UNIT: 0XA
+Loaded UNIT: 0XB
+Loaded UNIT: 0XD
+Loaded UNIT: 0XU
+Loaded UNIT: 0YA
+Loaded UNIT: 0YB
+Loaded UNIT: 0ZA
+Loaded UNIT: 0ZB
+Loaded UNIT: 0aA
+Loaded UNIT: 0aB
+Loaded UNIT: 0aD
+Loaded UNIT: 0aU
+Loaded UNIT: 0bA
+Loaded UNIT: 0bB
+Loaded UNIT: 0bC
+Loaded UNIT: 0bD
+Loaded UNIT: 0bU
+Loaded UNIT: 0cA
+Loaded UNIT: 0cB
+Loaded UNIT: 0cD
+Loaded UNIT: 0cU
+Loaded UNIT: 0dA
+Loaded UNIT: 0dB
+Loaded UNIT: 0dD
+Loaded UNIT: 0dR
+Loaded UNIT: 0dU
+Loaded UNIT: 0eA
+Loaded UNIT: 0eB
+Loaded UNIT: 0fA
+Loaded UNIT: 0fB
+Loaded UNIT: 0gA
+Loaded UNIT: 0gB
+Loaded UNIT: 0gL
+Loaded UNIT: 0hA
+Loaded UNIT: 0hB
+Loaded UNIT: 0jA
+Loaded UNIT: 0jB
+Loaded UNIT: 0jD
+Loaded UNIT: 0jU
+Loaded UNIT: 0kA
+Loaded UNIT: 0kB
+Loaded UNIT: 0lA
+Loaded UNIT: 0lB
+Loaded UNIT: 0mA
+Loaded UNIT: 0mB
+Loaded UNIT: 0nA
+Loaded UNIT: 0nB
+Loaded UNIT: 0oA
+Loaded UNIT: 0oB
+Loaded UNIT: 0pA
+Loaded UNIT: 0pB
+Loaded UNIT: 0pD
+Loaded UNIT: 0pU
+Loaded UNIT: 0qA
+Loaded UNIT: 0qB
+Loaded UNIT: 0rA
+Loaded UNIT: 0rB
+Loaded UNIT: 0rD
+Loaded UNIT: 0rU
+Loaded UNIT: 0sA
+Loaded UNIT: 0sB
+Loaded UNIT: 0tA
+Loaded UNIT: 0tB
+Loaded UNIT: 0tV
+Loaded UNIT: 0tv
+Loaded UNIT: 0uA
+Loaded UNIT: 0uB
+Loaded UNIT: 0vA
+Loaded UNIT: 0vB
+Loaded UNIT: 0wA
+Loaded UNIT: 0wB
+Loaded UNIT: 0xA
+Loaded UNIT: 0xB
+Loaded UNIT: 0xD
+Loaded UNIT: 0xU
+Loaded UNIT: 0yA
+Loaded UNIT: 0yB
+Loaded UNIT: 0zA
+Loaded UNIT: 0zB
+Loaded UNIT: 1AA
+Loaded UNIT: 1AB
+Loaded UNIT: 1AD
+Loaded UNIT: 1AU
+Loaded UNIT: 1BA
+Loaded UNIT: 1BB
+Loaded UNIT: 1BD
+Loaded UNIT: 1BU
+Loaded UNIT: 1CA
+Loaded UNIT: 1CB
+Loaded UNIT: 1CD
+Loaded UNIT: 1CU
+Loaded UNIT: 1DA
+Loaded UNIT: 1DB
+Loaded UNIT: 1DD
+Loaded UNIT: 1DU
+Loaded UNIT: 1EA
+Loaded UNIT: 1EB
+Loaded UNIT: 1FA
+Loaded UNIT: 1FB
+Loaded UNIT: 1GA
+Loaded UNIT: 1GB
+Loaded UNIT: 1HA
+Loaded UNIT: 1HB
+Loaded UNIT: 1JA
+Loaded UNIT: 1JB
+Loaded UNIT: 1JD
+Loaded UNIT: 1JU
+Loaded UNIT: 1KA
+Loaded UNIT: 1KB
+Loaded UNIT: 1LA
+Loaded UNIT: 1LB
+Loaded UNIT: 1MA
+Loaded UNIT: 1MB
+Loaded UNIT: 1NA
+Loaded UNIT: 1NB
+Loaded UNIT: 1OA
+Loaded UNIT: 1OB
+Loaded UNIT: 1PA
+Loaded UNIT: 1PB
+Loaded UNIT: 1PD
+Loaded UNIT: 1PU
+Loaded UNIT: 1QA
+Loaded UNIT: 1QB
+Loaded UNIT: 1RA
+Loaded UNIT: 1RB
+Loaded UNIT: 1RD
+Loaded UNIT: 1RU
+Loaded UNIT: 1TA
+Loaded UNIT: 1TB
+Loaded UNIT: 1TV
+Loaded UNIT: 1Tv
+Loaded UNIT: 1UA
+Loaded UNIT: 1UB
+Loaded UNIT: 1VA
+Loaded UNIT: 1VB
+Loaded UNIT: 1WA
+Loaded UNIT: 1WB
+Loaded UNIT: 1XA
+Loaded UNIT: 1XB
+Loaded UNIT: 1XD
+Loaded UNIT: 1XU
+Loaded UNIT: 1YA
+Loaded UNIT: 1YB
+Loaded UNIT: 1ZA
+Loaded UNIT: 1ZB
+Loaded UNIT: 1aA
+Loaded UNIT: 1aB
+Loaded UNIT: 1aD
+Loaded UNIT: 1aU
+Loaded UNIT: 1bA
+Loaded UNIT: 1bB
+Loaded UNIT: 1bD
+Loaded UNIT: 1bU
+Loaded UNIT: 1cA
+Loaded UNIT: 1cB
+Loaded UNIT: 1cD
+Loaded UNIT: 1cU
+Loaded UNIT: 1dA
+Loaded UNIT: 1dB
+Loaded UNIT: 1dD
+Loaded UNIT: 1dU
+Loaded UNIT: 1eA
+Loaded UNIT: 1eB
+Loaded UNIT: 1fA
+Loaded UNIT: 1fB
+Loaded UNIT: 1gA
+Loaded UNIT: 1gB
+Loaded UNIT: 1hA
+Loaded UNIT: 1hB
+Loaded UNIT: 1jA
+Loaded UNIT: 1jB
+Loaded UNIT: 1jD
+Loaded UNIT: 1jU
+Loaded UNIT: 1kA
+Loaded UNIT: 1kB
+Loaded UNIT: 1lA
+Loaded UNIT: 1lB
+Loaded UNIT: 1mA
+Loaded UNIT: 1mB
+Loaded UNIT: 1nA
+Loaded UNIT: 1nB
+Loaded UNIT: 1oA
+Loaded UNIT: 1oB
+Loaded UNIT: 1pA
+Loaded UNIT: 1pB
+Loaded UNIT: 1pD
+Loaded UNIT: 1pU
+Loaded UNIT: 1qA
+Loaded UNIT: 1qB
+Loaded UNIT: 1rA
+Loaded UNIT: 1rB
+Loaded UNIT: 1rD
+Loaded UNIT: 1rU
+Loaded UNIT: 1tA
+Loaded UNIT: 1tB
+Loaded UNIT: 1tV
+Loaded UNIT: 1tv
+Loaded UNIT: 1uA
+Loaded UNIT: 1uB
+Loaded UNIT: 1vA
+Loaded UNIT: 1vB
+Loaded UNIT: 1wA
+Loaded UNIT: 1wB
+Loaded UNIT: 1xA
+Loaded UNIT: 1xB
+Loaded UNIT: 1xD
+Loaded UNIT: 1xU
+Loaded UNIT: 1yA
+Loaded UNIT: 1yB
+Loaded UNIT: 1zA
+Loaded UNIT: 1zB
+Loaded UNIT: 2AA
+Loaded UNIT: 2AB
+Loaded UNIT: 2AD
+Loaded UNIT: 2AE
+Loaded UNIT: 2AF
+Loaded UNIT: 2AU
+Loaded UNIT: 2BA
+Loaded UNIT: 2BB
+Loaded UNIT: 2BD
+Loaded UNIT: 2BU
+Loaded UNIT: 2CA
+Loaded UNIT: 2CB
+Loaded UNIT: 2CD
+Loaded UNIT: 2CU
+Loaded UNIT: 2DA
+Loaded UNIT: 2DB
+Loaded UNIT: 2DD
+Loaded UNIT: 2DU
+Loaded UNIT: 2EA
+Loaded UNIT: 2EB
+Loaded UNIT: 2FA
+Loaded UNIT: 2FB
+Loaded UNIT: 2GA
+Loaded UNIT: 2GB
+Loaded UNIT: 2HA
+Loaded UNIT: 2HB
+Loaded UNIT: 2JA
+Loaded UNIT: 2JB
+Loaded UNIT: 2JD
+Loaded UNIT: 2JU
+Loaded UNIT: 2KA
+Loaded UNIT: 2KB
+Loaded UNIT: 2LA
+Loaded UNIT: 2LB
+Loaded UNIT: 2MA
+Loaded UNIT: 2MB
+Loaded UNIT: 2NA
+Loaded UNIT: 2NB
+Loaded UNIT: 2OA
+Loaded UNIT: 2OB
+Loaded UNIT: 2PA
+Loaded UNIT: 2PB
+Loaded UNIT: 2PD
+Loaded UNIT: 2PU
+Loaded UNIT: 2QA
+Loaded UNIT: 2QB
+Loaded UNIT: 2RA
+Loaded UNIT: 2RB
+Loaded UNIT: 2RD
+Loaded UNIT: 2RU
+Loaded UNIT: 2TA
+Loaded UNIT: 2TB
+Loaded UNIT: 2TV
+Loaded UNIT: 2Tv
+Loaded UNIT: 2UA
+Loaded UNIT: 2UB
+Loaded UNIT: 2XA
+Loaded UNIT: 2XB
+Loaded UNIT: 2XD
+Loaded UNIT: 2XU
+Loaded UNIT: 2ZA
+Loaded UNIT: 2ZB
+Loaded UNIT: 2aA
+Loaded UNIT: 2aB
+Loaded UNIT: 2aD
+Loaded UNIT: 2aU
+Loaded UNIT: 2bA
+Loaded UNIT: 2bB
+Loaded UNIT: 2bD
+Loaded UNIT: 2bU
+Loaded UNIT: 2cA
+Loaded UNIT: 2cB
+Loaded UNIT: 2cD
+Loaded UNIT: 2cU
+Loaded UNIT: 2dA
+Loaded UNIT: 2dB
+Loaded UNIT: 2dD
+Loaded UNIT: 2dU
+Loaded UNIT: 2eA
+Loaded UNIT: 2eB
+Loaded UNIT: 2fA
+Loaded UNIT: 2fB
+Loaded UNIT: 2gA
+Loaded UNIT: 2gB
+Loaded UNIT: 2hA
+Loaded UNIT: 2hB
+Loaded UNIT: 2jA
+Loaded UNIT: 2jB
+Loaded UNIT: 2jD
+Loaded UNIT: 2jU
+Loaded UNIT: 2kA
+Loaded UNIT: 2kB
+Loaded UNIT: 2lA
+Loaded UNIT: 2lB
+Loaded UNIT: 2mA
+Loaded UNIT: 2mB
+Loaded UNIT: 2nA
+Loaded UNIT: 2nB
+Loaded UNIT: 2oA
+Loaded UNIT: 2oB
+Loaded UNIT: 2pA
+Loaded UNIT: 2pB
+Loaded UNIT: 2pD
+Loaded UNIT: 2pU
+Loaded UNIT: 2qA
+Loaded UNIT: 2qB
+Loaded UNIT: 2rA
+Loaded UNIT: 2rB
+Loaded UNIT: 2rD
+Loaded UNIT: 2rU
+Loaded UNIT: 2tA
+Loaded UNIT: 2tB
+Loaded UNIT: 2tV
+Loaded UNIT: 2tv
+Loaded UNIT: 2uA
+Loaded UNIT: 2uB
+Loaded UNIT: 2xA
+Loaded UNIT: 2xB
+Loaded UNIT: 2xD
+Loaded UNIT: 2xU
+Loaded UNIT: 2zA
+Loaded UNIT: 2zB
+Loaded UNIT: 3AA
+Loaded UNIT: 3AB
+Loaded UNIT: 3AD
+Loaded UNIT: 3AU
+Loaded UNIT: 3BA
+Loaded UNIT: 3BB
+Loaded UNIT: 3BC
+Loaded UNIT: 3BD
+Loaded UNIT: 3BU
+Loaded UNIT: 3CA
+Loaded UNIT: 3CB
+Loaded UNIT: 3CD
+Loaded UNIT: 3CU
+Loaded UNIT: 3DA
+Loaded UNIT: 3DB
+Loaded UNIT: 3DD
+Loaded UNIT: 3DU
+Loaded UNIT: 3EA
+Loaded UNIT: 3EB
+Loaded UNIT: 3FA
+Loaded UNIT: 3FB
+Loaded UNIT: 3GA
+Loaded UNIT: 3GB
+Loaded UNIT: 3HA
+Loaded UNIT: 3HB
+Loaded UNIT: 3JA
+Loaded UNIT: 3JB
+Loaded UNIT: 3JD
+Loaded UNIT: 3JU
+Loaded UNIT: 3KA
+Loaded UNIT: 3KB
+Loaded UNIT: 3LA
+Loaded UNIT: 3LB
+Loaded UNIT: 3MA
+Loaded UNIT: 3MB
+Loaded UNIT: 3NA
+Loaded UNIT: 3NB
+Loaded UNIT: 3OA
+Loaded UNIT: 3OB
+Loaded UNIT: 3PA
+Loaded UNIT: 3PB
+Loaded UNIT: 3PD
+Loaded UNIT: 3PU
+Loaded UNIT: 3QA
+Loaded UNIT: 3QB
+Loaded UNIT: 3RA
+Loaded UNIT: 3RB
+Loaded UNIT: 3RD
+Loaded UNIT: 3RU
+Loaded UNIT: 3TA
+Loaded UNIT: 3TB
+Loaded UNIT: 3UA
+Loaded UNIT: 3UB
+Loaded UNIT: 3VA
+Loaded UNIT: 3VB
+Loaded UNIT: 3WA
+Loaded UNIT: 3WB
+Loaded UNIT: 3XA
+Loaded UNIT: 3XB
+Loaded UNIT: 3XD
+Loaded UNIT: 3XU
+Loaded UNIT: 3YA
+Loaded UNIT: 3YB
+Loaded UNIT: 3ZA
+Loaded UNIT: 3ZB
+Loaded UNIT: 3aA
+Loaded UNIT: 3aB
+Loaded UNIT: 3aD
+Loaded UNIT: 3aU
+Loaded UNIT: 3bA
+Loaded UNIT: 3bB
+Loaded UNIT: 3bC
+Loaded UNIT: 3bD
+Loaded UNIT: 3bU
+Loaded UNIT: 3cA
+Loaded UNIT: 3cB
+Loaded UNIT: 3cD
+Loaded UNIT: 3cU
+Loaded UNIT: 3dA
+Loaded UNIT: 3dB
+Loaded UNIT: 3dD
+Loaded UNIT: 3dR
+Loaded UNIT: 3dU
+Loaded UNIT: 3eA
+Loaded UNIT: 3eB
+Loaded UNIT: 3fA
+Loaded UNIT: 3fB
+Loaded UNIT: 3gA
+Loaded UNIT: 3gB
+Loaded UNIT: 3hA
+Loaded UNIT: 3hB
+Loaded UNIT: 3jA
+Loaded UNIT: 3jB
+Loaded UNIT: 3jD
+Loaded UNIT: 3jU
+Loaded UNIT: 3kA
+Loaded UNIT: 3kB
+Loaded UNIT: 3lA
+Loaded UNIT: 3lB
+Loaded UNIT: 3mA
+Loaded UNIT: 3mB
+Loaded UNIT: 3nA
+Loaded UNIT: 3nB
+Loaded UNIT: 3oA
+Loaded UNIT: 3oB
+Loaded UNIT: 3pA
+Loaded UNIT: 3pB
+Loaded UNIT: 3pD
+Loaded UNIT: 3pU
+Loaded UNIT: 3qA
+Loaded UNIT: 3qB
+Loaded UNIT: 3rA
+Loaded UNIT: 3rB
+Loaded UNIT: 3rD
+Loaded UNIT: 3rU
+Loaded UNIT: 3tA
+Loaded UNIT: 3tB
+Loaded UNIT: 3uA
+Loaded UNIT: 3uB
+Loaded UNIT: 3vA
+Loaded UNIT: 3vB
+Loaded UNIT: 3wA
+Loaded UNIT: 3wB
+Loaded UNIT: 3xA
+Loaded UNIT: 3xB
+Loaded UNIT: 3xD
+Loaded UNIT: 3xU
+Loaded UNIT: 3yA
+Loaded UNIT: 3yB
+Loaded UNIT: 3zA
+Loaded UNIT: 3zB
+Loaded UNIT: 4AA
+Loaded UNIT: 4AB
+Loaded UNIT: 4AE
+Loaded UNIT: 4AF
+Loaded UNIT: 4BA
+Loaded UNIT: 4BB
+Loaded UNIT: 4BD
+Loaded UNIT: 4BU
+Loaded UNIT: 4CA
+Loaded UNIT: 4CB
+Loaded UNIT: 4CD
+Loaded UNIT: 4CU
+Loaded UNIT: 4DA
+Loaded UNIT: 4DB
+Loaded UNIT: 4EA
+Loaded UNIT: 4EB
+Loaded UNIT: 4FA
+Loaded UNIT: 4FB
+Loaded UNIT: 4GA
+Loaded UNIT: 4GB
+Loaded UNIT: 4GL
+Loaded UNIT: 4HA
+Loaded UNIT: 4HB
+Loaded UNIT: 4JA
+Loaded UNIT: 4JB
+Loaded UNIT: 4JD
+Loaded UNIT: 4JU
+Loaded UNIT: 4KA
+Loaded UNIT: 4KB
+Loaded UNIT: 4LA
+Loaded UNIT: 4LB
+Loaded UNIT: 4MA
+Loaded UNIT: 4MB
+Loaded UNIT: 4NA
+Loaded UNIT: 4NB
+Loaded UNIT: 4OA
+Loaded UNIT: 4OB
+Loaded UNIT: 4PA
+Loaded UNIT: 4PB
+Loaded UNIT: 4PD
+Loaded UNIT: 4PU
+Loaded UNIT: 4QA
+Loaded UNIT: 4QB
+Loaded UNIT: 4RA
+Loaded UNIT: 4RB
+Loaded UNIT: 4SA
+Loaded UNIT: 4SB
+Loaded UNIT: 4TA
+Loaded UNIT: 4TB
+Loaded UNIT: 4TV
+Loaded UNIT: 4Tv
+Loaded UNIT: 4UA
+Loaded UNIT: 4UB
+Loaded UNIT: 4VA
+Loaded UNIT: 4VB
+Loaded UNIT: 4WA
+Loaded UNIT: 4WB
+Loaded UNIT: 4XA
+Loaded UNIT: 4XB
+Loaded UNIT: 4YA
+Loaded UNIT: 4YB
+Loaded UNIT: 4ZA
+Loaded UNIT: 4ZB
+Loaded UNIT: 4aA
+Loaded UNIT: 4aB
+Loaded UNIT: 4bA
+Loaded UNIT: 4bB
+Loaded UNIT: 4bD
+Loaded UNIT: 4bU
+Loaded UNIT: 4cA
+Loaded UNIT: 4cB
+Loaded UNIT: 4cD
+Loaded UNIT: 4cU
+Loaded UNIT: 4dA
+Loaded UNIT: 4dB
+Loaded UNIT: 4dR
+Loaded UNIT: 4eA
+Loaded UNIT: 4eB
+Loaded UNIT: 4fA
+Loaded UNIT: 4fB
+Loaded UNIT: 4gA
+Loaded UNIT: 4gB
+Loaded UNIT: 4gL
+Loaded UNIT: 4hA
+Loaded UNIT: 4hB
+Loaded UNIT: 4jA
+Loaded UNIT: 4jB
+Loaded UNIT: 4jD
+Loaded UNIT: 4jU
+Loaded UNIT: 4kA
+Loaded UNIT: 4kB
+Loaded UNIT: 4lA
+Loaded UNIT: 4lB
+Loaded UNIT: 4mA
+Loaded UNIT: 4mB
+Loaded UNIT: 4nA
+Loaded UNIT: 4nB
+Loaded UNIT: 4oA
+Loaded UNIT: 4oB
+Loaded UNIT: 4pA
+Loaded UNIT: 4pB
+Loaded UNIT: 4pD
+Loaded UNIT: 4pU
+Loaded UNIT: 4qA
+Loaded UNIT: 4qB
+Loaded UNIT: 4rA
+Loaded UNIT: 4rB
+Loaded UNIT: 4sA
+Loaded UNIT: 4sB
+Loaded UNIT: 4tA
+Loaded UNIT: 4tB
+Loaded UNIT: 4tV
+Loaded UNIT: 4tv
+Loaded UNIT: 4uA
+Loaded UNIT: 4uB
+Loaded UNIT: 4vA
+Loaded UNIT: 4vB
+Loaded UNIT: 4wA
+Loaded UNIT: 4wB
+Loaded UNIT: 4xA
+Loaded UNIT: 4xB
+Loaded UNIT: 4yA
+Loaded UNIT: 4yB
+Loaded UNIT: 4zA
+Loaded UNIT: 4zB
+Loaded UNIT: 5AD
+Loaded UNIT: 5AU
+Loaded UNIT: 5BA
+Loaded UNIT: 5BB
+Loaded UNIT: 5CA
+Loaded UNIT: 5CB
+Loaded UNIT: 5DD
+Loaded UNIT: 5DU
+Loaded UNIT: 5JA
+Loaded UNIT: 5JB
+Loaded UNIT: 5PA
+Loaded UNIT: 5PB
+Loaded UNIT: 5RD
+Loaded UNIT: 5RU
+Loaded UNIT: 5XD
+Loaded UNIT: 5XU
+Loaded UNIT: 5aD
+Loaded UNIT: 5aU
+Loaded UNIT: 5bA
+Loaded UNIT: 5bB
+Loaded UNIT: 5cA
+Loaded UNIT: 5cB
+Loaded UNIT: 5dD
+Loaded UNIT: 5dU
+Loaded UNIT: 5jA
+Loaded UNIT: 5jB
+Loaded UNIT: 5pA
+Loaded UNIT: 5pB
+Loaded UNIT: 5rD
+Loaded UNIT: 5rU
+Loaded UNIT: 5xD
+Loaded UNIT: 5xU
+Loaded UNIT: 6BD
+Loaded UNIT: 6BU
+Loaded UNIT: 6CD
+Loaded UNIT: 6CU
+Loaded UNIT: 6EA
+Loaded UNIT: 6EB
+Loaded UNIT: 6GA
+Loaded UNIT: 6GB
+Loaded UNIT: 6JD
+Loaded UNIT: 6JU
+Loaded UNIT: 6KA
+Loaded UNIT: 6KB
+Loaded UNIT: 6LA
+Loaded UNIT: 6LB
+Loaded UNIT: 6MA
+Loaded UNIT: 6MB
+Loaded UNIT: 6NA
+Loaded UNIT: 6NB
+Loaded UNIT: 6PD
+Loaded UNIT: 6PU
+Loaded UNIT: 6TA
+Loaded UNIT: 6TB
+Loaded UNIT: 6VA
+Loaded UNIT: 6VB
+Loaded UNIT: 6WA
+Loaded UNIT: 6WB
+Loaded UNIT: 6YA
+Loaded UNIT: 6YB
+Loaded UNIT: 6bD
+Loaded UNIT: 6bU
+Loaded UNIT: 6cD
+Loaded UNIT: 6cU
+Loaded UNIT: 6eA
+Loaded UNIT: 6eB
+Loaded UNIT: 6gA
+Loaded UNIT: 6gB
+Loaded UNIT: 6jD
+Loaded UNIT: 6jU
+Loaded UNIT: 6kA
+Loaded UNIT: 6kB
+Loaded UNIT: 6lA
+Loaded UNIT: 6lB
+Loaded UNIT: 6mA
+Loaded UNIT: 6mB
+Loaded UNIT: 6nA
+Loaded UNIT: 6nB
+Loaded UNIT: 6pD
+Loaded UNIT: 6pU
+Loaded UNIT: 6tA
+Loaded UNIT: 6tB
+Loaded UNIT: 6vA
+Loaded UNIT: 6vB
+Loaded UNIT: 6wA
+Loaded UNIT: 6wB
+Loaded UNIT: 6yA
+Loaded UNIT: 6yB
+Loaded UNIT: 7GL
+Loaded UNIT: 7SA
+Loaded UNIT: 7SB
+Loaded UNIT: 7gL
+Loaded UNIT: 7sA
+Loaded UNIT: 7sB
+Loaded UNIT: 8GL
+Loaded UNIT: 8SA
+Loaded UNIT: 8SB
+Loaded UNIT: 8gL
+Loaded UNIT: 8sA
+Loaded UNIT: 8sB
+Loaded UNIT: 9GL
+Loaded UNIT: 9SA
+Loaded UNIT: 9SB
+Loaded UNIT: 9gL
+Loaded UNIT: 9sA
+Loaded UNIT: 9sB
+Loaded UNIT: ACX
+Loaded UNIT: AGL
+Loaded UNIT: ASA
+Loaded UNIT: ASB
+Loaded UNIT: AgL
+Loaded UNIT: AsA
+Loaded UNIT: AsB
+Loaded UNIT: BGL
+Loaded UNIT: BSA
+Loaded UNIT: BSB
+Loaded UNIT: BgL
+Loaded UNIT: BsA
+Loaded UNIT: BsB
+Loaded UNIT: CA2
+Loaded UNIT: CGL
+Loaded UNIT: CSA
+Loaded UNIT: CSB
+Loaded UNIT: CgL
+Loaded UNIT: CsA
+Loaded UNIT: CsB
+Loaded UNIT: DGL
+Loaded UNIT: DSA
+Loaded UNIT: DSB
+Loaded UNIT: DgL
+Loaded UNIT: DsA
+Loaded UNIT: DsB
+Loaded UNIT: EGL
+Loaded UNIT: ESA
+Loaded UNIT: ESB
+Loaded UNIT: EgL
+Loaded UNIT: EsA
+Loaded UNIT: EsB
+Loaded UNIT: FGL
+Loaded UNIT: FSA
+Loaded UNIT: FSB
+Loaded UNIT: FgL
+Loaded UNIT: FsA
+Loaded UNIT: FsB
+Loaded UNIT: GGL
+Loaded UNIT: GSA
+Loaded UNIT: GSB
+Loaded UNIT: GgL
+Loaded UNIT: GsA
+Loaded UNIT: GsB
+Loaded UNIT: HGL
+Loaded UNIT: HSA
+Loaded UNIT: HSB
+Loaded UNIT: HgL
+Loaded UNIT: HsA
+Loaded UNIT: HsB
+Loaded UNIT: IGL
+Loaded UNIT: ISA
+Loaded UNIT: ISB
+Loaded UNIT: IgL
+Loaded UNIT: IsA
+Loaded UNIT: IsB
+Loaded UNIT: JGL
+Loaded UNIT: JSA
+Loaded UNIT: JSB
+Loaded UNIT: JgL
+Loaded UNIT: JsA
+Loaded UNIT: JsB
+Loaded UNIT: KGL
+Loaded UNIT: KSA
+Loaded UNIT: KSB
+Loaded UNIT: KgL
+Loaded UNIT: KsA
+Loaded UNIT: KsB
+Loaded UNIT: MEX
+Loaded UNIT: NLN
+Loaded UNIT: OLS
+Loaded UNIT: OLT
+Loaded UNIT: OME
+Loaded UNIT: PEA
+Loaded UNIT: PEB
+Loaded UNIT: PGA
+Loaded UNIT: PGB
+Loaded UNIT: PKA
+Loaded UNIT: PKB
+Loaded UNIT: PLA
+Loaded UNIT: PLB
+Loaded UNIT: PMA
+Loaded UNIT: PMB
+Loaded UNIT: PNA
+Loaded UNIT: PNB
+Loaded UNIT: PTA
+Loaded UNIT: PTB
+Loaded UNIT: PeA
+Loaded UNIT: PeB
+Loaded UNIT: PgA
+Loaded UNIT: PgB
+Loaded UNIT: PkA
+Loaded UNIT: PkB
+Loaded UNIT: PlA
+Loaded UNIT: PlB
+Loaded UNIT: PmA
+Loaded UNIT: PmB
+Loaded UNIT: PnA
+Loaded UNIT: PnB
+Loaded UNIT: PtA
+Loaded UNIT: PtB
+Loaded UNIT: QBD
+Loaded UNIT: QBU
+Loaded UNIT: QCD
+Loaded UNIT: QCU
+Loaded UNIT: QEA
+Loaded UNIT: QEB
+Loaded UNIT: QGA
+Loaded UNIT: QGB
+Loaded UNIT: QJD
+Loaded UNIT: QJU
+Loaded UNIT: QKA
+Loaded UNIT: QKB
+Loaded UNIT: QLA
+Loaded UNIT: QLB
+Loaded UNIT: QMA
+Loaded UNIT: QMB
+Loaded UNIT: QNA
+Loaded UNIT: QNB
+Loaded UNIT: QPD
+Loaded UNIT: QPU
+Loaded UNIT: QTA
+Loaded UNIT: QTB
+Loaded UNIT: QVA
+Loaded UNIT: QVB
+Loaded UNIT: QWA
+Loaded UNIT: QWB
+Loaded UNIT: QYA
+Loaded UNIT: QYB
+Loaded UNIT: QbD
+Loaded UNIT: QbU
+Loaded UNIT: QcD
+Loaded UNIT: QcU
+Loaded UNIT: QeA
+Loaded UNIT: QeB
+Loaded UNIT: QgA
+Loaded UNIT: QgB
+Loaded UNIT: QjD
+Loaded UNIT: QjU
+Loaded UNIT: QkA
+Loaded UNIT: QkB
+Loaded UNIT: QlA
+Loaded UNIT: QlB
+Loaded UNIT: QmA
+Loaded UNIT: QmB
+Loaded UNIT: QnA
+Loaded UNIT: QnB
+Loaded UNIT: QpD
+Loaded UNIT: QpU
+Loaded UNIT: QtA
+Loaded UNIT: QtB
+Loaded UNIT: QvA
+Loaded UNIT: QvB
+Loaded UNIT: QwA
+Loaded UNIT: QwB
+Loaded UNIT: QyA
+Loaded UNIT: QyB
+Loaded UNIT: REA
+Loaded UNIT: REB
+Loaded UNIT: RGA
+Loaded UNIT: RGB
+Loaded UNIT: RKA
+Loaded UNIT: RKB
+Loaded UNIT: RLA
+Loaded UNIT: RLB
+Loaded UNIT: RMA
+Loaded UNIT: RMB
+Loaded UNIT: RNA
+Loaded UNIT: RNB
+Loaded UNIT: ROH
+Loaded UNIT: RTA
+Loaded UNIT: RTB
+Loaded UNIT: ReA
+Loaded UNIT: ReB
+Loaded UNIT: RgA
+Loaded UNIT: RgB
+Loaded UNIT: RkA
+Loaded UNIT: RkB
+Loaded UNIT: RlA
+Loaded UNIT: RlB
+Loaded UNIT: RmA
+Loaded UNIT: RmB
+Loaded UNIT: RnA
+Loaded UNIT: RnB
+Loaded UNIT: RtA
+Loaded UNIT: RtB
+Loaded UNIT: SEA
+Loaded UNIT: SEB
+Loaded UNIT: SGA
+Loaded UNIT: SGB
+Loaded UNIT: SKA
+Loaded UNIT: SKB
+Loaded UNIT: SLA
+Loaded UNIT: SLB
+Loaded UNIT: SMA
+Loaded UNIT: SMB
+Loaded UNIT: SNA
+Loaded UNIT: SNB
+Loaded UNIT: SO3
+Loaded UNIT: STA
+Loaded UNIT: STB
+Loaded UNIT: SeA
+Loaded UNIT: SeB
+Loaded UNIT: SgA
+Loaded UNIT: SgB
+Loaded UNIT: SkA
+Loaded UNIT: SkB
+Loaded UNIT: SlA
+Loaded UNIT: SlB
+Loaded UNIT: SmA
+Loaded UNIT: SmB
+Loaded UNIT: SnA
+Loaded UNIT: SnB
+Loaded UNIT: StA
+Loaded UNIT: StB
+Loaded UNIT: TAA
+Loaded UNIT: TAB
+Loaded UNIT: TBT
+Loaded UNIT: TDA
+Loaded UNIT: TDB
+Loaded UNIT: TEA
+Loaded UNIT: TEB
+Loaded UNIT: TFA
+Loaded UNIT: TFB
+Loaded UNIT: TGA
+Loaded UNIT: TGB
+Loaded UNIT: THA
+Loaded UNIT: THB
+Loaded UNIT: TKA
+Loaded UNIT: TKB
+Loaded UNIT: TLA
+Loaded UNIT: TLB
+Loaded UNIT: TMA
+Loaded UNIT: TMB
+Loaded UNIT: TNA
+Loaded UNIT: TNB
+Loaded UNIT: TOA
+Loaded UNIT: TOB
+Loaded UNIT: TQA
+Loaded UNIT: TQB
+Loaded UNIT: TRA
+Loaded UNIT: TRB
+Loaded UNIT: TTA
+Loaded UNIT: TTB
+Loaded UNIT: TUA
+Loaded UNIT: TUB
+Loaded UNIT: TXA
+Loaded UNIT: TXB
+Loaded UNIT: TZA
+Loaded UNIT: TZB
+Loaded UNIT: TaA
+Loaded UNIT: TaB
+Loaded UNIT: TdA
+Loaded UNIT: TdB
+Loaded UNIT: TeA
+Loaded UNIT: TeB
+Loaded UNIT: TfA
+Loaded UNIT: TfB
+Loaded UNIT: TgA
+Loaded UNIT: TgB
+Loaded UNIT: ThA
+Loaded UNIT: ThB
+Loaded UNIT: TkA
+Loaded UNIT: TkB
+Loaded UNIT: TlA
+Loaded UNIT: TlB
+Loaded UNIT: TmA
+Loaded UNIT: TmB
+Loaded UNIT: TnA
+Loaded UNIT: TnB
+Loaded UNIT: ToA
+Loaded UNIT: ToB
+Loaded UNIT: TqA
+Loaded UNIT: TqB
+Loaded UNIT: TrA
+Loaded UNIT: TrB
+Loaded UNIT: TtA
+Loaded UNIT: TtB
+Loaded UNIT: TuA
+Loaded UNIT: TuB
+Loaded UNIT: TxA
+Loaded UNIT: TxB
+Loaded UNIT: TzA
+Loaded UNIT: TzB
+Loaded UNIT: UBD
+Loaded UNIT: UBU
+Loaded UNIT: UCD
+Loaded UNIT: UCU
+Loaded UNIT: UEA
+Loaded UNIT: UEB
+Loaded UNIT: UGA
+Loaded UNIT: UGB
+Loaded UNIT: UJD
+Loaded UNIT: UJU
+Loaded UNIT: UKA
+Loaded UNIT: UKB
+Loaded UNIT: ULA
+Loaded UNIT: ULB
+Loaded UNIT: UMA
+Loaded UNIT: UMB
+Loaded UNIT: UNA
+Loaded UNIT: UNB
+Loaded UNIT: UPD
+Loaded UNIT: UPU
+Loaded UNIT: UTA
+Loaded UNIT: UTB
+Loaded UNIT: UVA
+Loaded UNIT: UVB
+Loaded UNIT: UWA
+Loaded UNIT: UWB
+Loaded UNIT: UYA
+Loaded UNIT: UYB
+Loaded UNIT: UbD
+Loaded UNIT: UbU
+Loaded UNIT: UcD
+Loaded UNIT: UcU
+Loaded UNIT: UeA
+Loaded UNIT: UeB
+Loaded UNIT: UgA
+Loaded UNIT: UgB
+Loaded UNIT: UjD
+Loaded UNIT: UjU
+Loaded UNIT: UkA
+Loaded UNIT: UkB
+Loaded UNIT: UlA
+Loaded UNIT: UlB
+Loaded UNIT: UmA
+Loaded UNIT: UmB
+Loaded UNIT: UnA
+Loaded UNIT: UnB
+Loaded UNIT: UpD
+Loaded UNIT: UpU
+Loaded UNIT: UtA
+Loaded UNIT: UtB
+Loaded UNIT: UvA
+Loaded UNIT: UvB
+Loaded UNIT: UwA
+Loaded UNIT: UwB
+Loaded UNIT: UyA
+Loaded UNIT: UyB
+Loaded UNIT: VBD
+Loaded UNIT: VBU
+Loaded UNIT: VCD
+Loaded UNIT: VCU
+Loaded UNIT: VEA
+Loaded UNIT: VEB
+Loaded UNIT: VGA
+Loaded UNIT: VGB
+Loaded UNIT: VJD
+Loaded UNIT: VJU
+Loaded UNIT: VKA
+Loaded UNIT: VKB
+Loaded UNIT: VLA
+Loaded UNIT: VLB
+Loaded UNIT: VMA
+Loaded UNIT: VMB
+Loaded UNIT: VNA
+Loaded UNIT: VNB
+Loaded UNIT: VPD
+Loaded UNIT: VPU
+Loaded UNIT: VTA
+Loaded UNIT: VTB
+Loaded UNIT: VVA
+Loaded UNIT: VVB
+Loaded UNIT: VWA
+Loaded UNIT: VWB
+Loaded UNIT: VYA
+Loaded UNIT: VYB
+Loaded UNIT: VbD
+Loaded UNIT: VbU
+Loaded UNIT: VcD
+Loaded UNIT: VcU
+Loaded UNIT: VeA
+Loaded UNIT: VeB
+Loaded UNIT: VgA
+Loaded UNIT: VgB
+Loaded UNIT: VjD
+Loaded UNIT: VjU
+Loaded UNIT: VkA
+Loaded UNIT: VkB
+Loaded UNIT: VlA
+Loaded UNIT: VlB
+Loaded UNIT: VmA
+Loaded UNIT: VmB
+Loaded UNIT: VnA
+Loaded UNIT: VnB
+Loaded UNIT: VpD
+Loaded UNIT: VpU
+Loaded UNIT: VtA
+Loaded UNIT: VtB
+Loaded UNIT: VvA
+Loaded UNIT: VvB
+Loaded UNIT: VwA
+Loaded UNIT: VwB
+Loaded UNIT: VyA
+Loaded UNIT: VyB
+Loaded UNIT: WAA
+Loaded UNIT: WAB
+Loaded UNIT: WBA
+Loaded UNIT: WBB
+Loaded UNIT: WBD
+Loaded UNIT: WBU
+Loaded UNIT: WCA
+Loaded UNIT: WCB
+Loaded UNIT: WCD
+Loaded UNIT: WCU
+Loaded UNIT: WDA
+Loaded UNIT: WDB
+Loaded UNIT: WEA
+Loaded UNIT: WEB
+Loaded UNIT: WFA
+Loaded UNIT: WFB
+Loaded UNIT: WGA
+Loaded UNIT: WGB
+Loaded UNIT: WHA
+Loaded UNIT: WHB
+Loaded UNIT: WJA
+Loaded UNIT: WJB
+Loaded UNIT: WJD
+Loaded UNIT: WJU
+Loaded UNIT: WKA
+Loaded UNIT: WKB
+Loaded UNIT: WLA
+Loaded UNIT: WLB
+Loaded UNIT: WMA
+Loaded UNIT: WMB
+Loaded UNIT: WNA
+Loaded UNIT: WNB
+Loaded UNIT: WOA
+Loaded UNIT: WOB
+Loaded UNIT: WPA
+Loaded UNIT: WPB
+Loaded UNIT: WPD
+Loaded UNIT: WPU
+Loaded UNIT: WQA
+Loaded UNIT: WQB
+Loaded UNIT: WRA
+Loaded UNIT: WRB
+Loaded UNIT: WTA
+Loaded UNIT: WTB
+Loaded UNIT: WUA
+Loaded UNIT: WUB
+Loaded UNIT: WVA
+Loaded UNIT: WVB
+Loaded UNIT: WWA
+Loaded UNIT: WWB
+Loaded UNIT: WXA
+Loaded UNIT: WXB
+Loaded UNIT: WYA
+Loaded UNIT: WYB
+Loaded UNIT: WZA
+Loaded UNIT: WZB
+Loaded UNIT: WaA
+Loaded UNIT: WaB
+Loaded UNIT: WbA
+Loaded UNIT: WbB
+Loaded UNIT: WbD
+Loaded UNIT: WbU
+Loaded UNIT: WcA
+Loaded UNIT: WcB
+Loaded UNIT: WcD
+Loaded UNIT: WcU
+Loaded UNIT: WdA
+Loaded UNIT: WdB
+Loaded UNIT: WdR
+Loaded UNIT: WeA
+Loaded UNIT: WeB
+Loaded UNIT: WfA
+Loaded UNIT: WfB
+Loaded UNIT: WgA
+Loaded UNIT: WgB
+Loaded UNIT: WhA
+Loaded UNIT: WhB
+Loaded UNIT: WjA
+Loaded UNIT: WjB
+Loaded UNIT: WjD
+Loaded UNIT: WjU
+Loaded UNIT: WkA
+Loaded UNIT: WkB
+Loaded UNIT: WlA
+Loaded UNIT: WlB
+Loaded UNIT: WmA
+Loaded UNIT: WmB
+Loaded UNIT: WnA
+Loaded UNIT: WnB
+Loaded UNIT: WoA
+Loaded UNIT: WoB
+Loaded UNIT: WpA
+Loaded UNIT: WpB
+Loaded UNIT: WpD
+Loaded UNIT: WpU
+Loaded UNIT: WqA
+Loaded UNIT: WqB
+Loaded UNIT: WrA
+Loaded UNIT: WrB
+Loaded UNIT: WtA
+Loaded UNIT: WtB
+Loaded UNIT: WuA
+Loaded UNIT: WuB
+Loaded UNIT: WvA
+Loaded UNIT: WvB
+Loaded UNIT: WwA
+Loaded UNIT: WwB
+Loaded UNIT: WxA
+Loaded UNIT: WxB
+Loaded UNIT: WyA
+Loaded UNIT: WyB
+Loaded UNIT: WzA
+Loaded UNIT: WzB
+Loaded UNIT: XEA
+Loaded UNIT: XEB
+Loaded UNIT: XGA
+Loaded UNIT: XGB
+Loaded UNIT: XKA
+Loaded UNIT: XKB
+Loaded UNIT: XLA
+Loaded UNIT: XLB
+Loaded UNIT: XMA
+Loaded UNIT: XMB
+Loaded UNIT: XNA
+Loaded UNIT: XNB
+Loaded UNIT: XTA
+Loaded UNIT: XTB
+Loaded UNIT: XeA
+Loaded UNIT: XeB
+Loaded UNIT: XgA
+Loaded UNIT: XgB
+Loaded UNIT: XkA
+Loaded UNIT: XkB
+Loaded UNIT: XlA
+Loaded UNIT: XlB
+Loaded UNIT: XmA
+Loaded UNIT: XmB
+Loaded UNIT: XnA
+Loaded UNIT: XnB
+Loaded UNIT: XtA
+Loaded UNIT: XtB
+Loaded UNIT: YAA
+Loaded UNIT: YAB
+Loaded UNIT: YAF
+Loaded UNIT: YDA
+Loaded UNIT: YDB
+Loaded UNIT: YEA
+Loaded UNIT: YEB
+Loaded UNIT: YFA
+Loaded UNIT: YFB
+Loaded UNIT: YGA
+Loaded UNIT: YGB
+Loaded UNIT: YGa
+Loaded UNIT: YHA
+Loaded UNIT: YHB
+Loaded UNIT: YKA
+Loaded UNIT: YKB
+Loaded UNIT: YLA
+Loaded UNIT: YLB
+Loaded UNIT: YMA
+Loaded UNIT: YMB
+Loaded UNIT: YNA
+Loaded UNIT: YNB
+Loaded UNIT: YOA
+Loaded UNIT: YOB
+Loaded UNIT: YQA
+Loaded UNIT: YQB
+Loaded UNIT: YRA
+Loaded UNIT: YRB
+Loaded UNIT: YTA
+Loaded UNIT: YTB
+Loaded UNIT: YTV
+Loaded UNIT: YTv
+Loaded UNIT: YUA
+Loaded UNIT: YUB
+Loaded UNIT: YXA
+Loaded UNIT: YXB
+Loaded UNIT: YZA
+Loaded UNIT: YZB
+Loaded UNIT: YaA
+Loaded UNIT: YaB
+Loaded UNIT: YdA
+Loaded UNIT: YdB
+Loaded UNIT: YeA
+Loaded UNIT: YeB
+Loaded UNIT: YfA
+Loaded UNIT: YfB
+Loaded UNIT: YgA
+Loaded UNIT: YgB
+Loaded UNIT: YhA
+Loaded UNIT: YhB
+Loaded UNIT: YkA
+Loaded UNIT: YkB
+Loaded UNIT: YlA
+Loaded UNIT: YlB
+Loaded UNIT: YmA
+Loaded UNIT: YmB
+Loaded UNIT: YnA
+Loaded UNIT: YnB
+Loaded UNIT: YoA
+Loaded UNIT: YoB
+Loaded UNIT: YqA
+Loaded UNIT: YqB
+Loaded UNIT: YrA
+Loaded UNIT: YrB
+Loaded UNIT: YtA
+Loaded UNIT: YtB
+Loaded UNIT: YtV
+Loaded UNIT: Ytv
+Loaded UNIT: YuA
+Loaded UNIT: YuB
+Loaded UNIT: YxA
+Loaded UNIT: YxB
+Loaded UNIT: YzA
+Loaded UNIT: YzB
+Loaded UNIT: ZAA
+Loaded UNIT: ZAB
+Loaded UNIT: ZAD
+Loaded UNIT: ZAU
+Loaded UNIT: ZDA
+Loaded UNIT: ZDB
+Loaded UNIT: ZDD
+Loaded UNIT: ZDU
+Loaded UNIT: ZEA
+Loaded UNIT: ZEB
+Loaded UNIT: ZFA
+Loaded UNIT: ZFB
+Loaded UNIT: ZGA
+Loaded UNIT: ZGB
+Loaded UNIT: ZHA
+Loaded UNIT: ZHB
+Loaded UNIT: ZKA
+Loaded UNIT: ZKB
+Loaded UNIT: ZLA
+Loaded UNIT: ZLB
+Loaded UNIT: ZMA
+Loaded UNIT: ZMB
+Loaded UNIT: ZNA
+Loaded UNIT: ZNB
+Loaded UNIT: ZOA
+Loaded UNIT: ZOB
+Loaded UNIT: ZOLS
+Loaded UNIT: ZOLT
+Loaded UNIT: ZQA
+Loaded UNIT: ZQB
+Loaded UNIT: ZRA
+Loaded UNIT: ZRB
+Loaded UNIT: ZRD
+Loaded UNIT: ZRU
+Loaded UNIT: ZTA
+Loaded UNIT: ZTB
+Loaded UNIT: ZUA
+Loaded UNIT: ZUB
+Loaded UNIT: ZXA
+Loaded UNIT: ZXB
+Loaded UNIT: ZXD
+Loaded UNIT: ZXU
+Loaded UNIT: ZZA
+Loaded UNIT: ZZB
+Loaded UNIT: ZaA
+Loaded UNIT: ZaB
+Loaded UNIT: ZaD
+Loaded UNIT: ZaU
+Loaded UNIT: ZdA
+Loaded UNIT: ZdB
+Loaded UNIT: ZdD
+Loaded UNIT: ZdU
+Loaded UNIT: ZeA
+Loaded UNIT: ZeB
+Loaded UNIT: ZfA
+Loaded UNIT: ZfB
+Loaded UNIT: ZgA
+Loaded UNIT: ZgB
+Loaded UNIT: ZhA
+Loaded UNIT: ZhB
+Loaded UNIT: ZkA
+Loaded UNIT: ZkB
+Loaded UNIT: ZlA
+Loaded UNIT: ZlB
+Loaded UNIT: ZmA
+Loaded UNIT: ZmB
+Loaded UNIT: ZnA
+Loaded UNIT: ZnB
+Loaded UNIT: ZoA
+Loaded UNIT: ZoB
+Loaded UNIT: ZqA
+Loaded UNIT: ZqB
+Loaded UNIT: ZrA
+Loaded UNIT: ZrB
+Loaded UNIT: ZrD
+Loaded UNIT: ZrU
+Loaded UNIT: ZtA
+Loaded UNIT: ZtB
+Loaded UNIT: ZuA
+Loaded UNIT: ZuB
+Loaded UNIT: ZxA
+Loaded UNIT: ZxB
+Loaded UNIT: ZxD
+Loaded UNIT: ZxU
+Loaded UNIT: ZzA
+Loaded UNIT: ZzB
+>> #
+>> #	load lib files
+>> #
+>> # for attaching glycans to proteins
+>> loadOff GLYCAM_amino_06j_12SB.lib
+Loading library: /programs/amber/dat/leap/lib/GLYCAM_amino_06j_12SB.lib
+Loading: HYP
+Loading: NLN
+Loading: OLP
+Loading: OLS
+Loading: OLT
+>> loadOff GLYCAM_aminoct_06j_12SB.lib
+Loading library: /programs/amber/dat/leap/lib/GLYCAM_aminoct_06j_12SB.lib
+Loading: CHYP
+Loading: CNLN
+Loading: COLP
+Loading: COLS
+Loading: COLT
+>> loadOff GLYCAM_aminont_06j_12SB.lib
+Loading library: /programs/amber/dat/leap/lib/GLYCAM_aminont_06j_12SB.lib
+Loading: NHYP
+Loading: NNLN
+Loading: NOLP
+Loading: NOLS
+Loading: NOLT
+>> ## add residue maps for linking glycans to proteins
+>> ## Note! use of these requires sourcing the ff12SB leaprc and loading the amino 
+>> ##	libraries commented out in the load libs section 
+>> addPdbResMap { 
+>>         { 0 "OLS" "NOLS" } { 1 "OLS" "COLS" }
+>>         { 0 "OLT" "NOLT" } { 1 "OLT" "COLT" }
+>>         { 0 "OLP" "NOLP" } { 1 "OLP" "COLP" }
+>>         { 0 "HYP" "NHYP" } { 1 "HYP" "CHYP" }
+>>         { 0 "NLN" "NNLN" } { 1 "NLN" "CNLN" }
+>> } 
+>> #
+>> # for explicit solvent and ions
+>> #
+>> # the following assumes most users want to use tip3p as the 
+>> # explicit solvent model 
+>> # this can easily switched by the following commands in leap:
+>> # WAT = TP5
+>> # loadamberparams frcmod.tip5p
+>> #
+>> loadOff solvents.lib  # solvents 
+Loading library: /programs/amber/dat/leap/lib/solvents.lib
+Loading: CHCL3BOX
+Loading: DC4
+Loading: FB3
+Loading: FB3BOX
+Loading: FB4
+Loading: FB4BOX
+Loading: MEOHBOX
+Loading: NMABOX
+Loading: OP3
+Loading: OPC
+Loading: OPC3BOX
+Loading: OPCBOX
+Loading: PL3
+Loading: POL3BOX
+Loading: QSPCFWBOX
+Loading: SPC
+Loading: SPCBOX
+Loading: SPCFWBOX
+Loading: SPF
+Loading: SPG
+Loading: T4E
+Loading: TIP3PBOX
+Loading: TIP3PFBOX
+Loading: TIP4PBOX
+Loading: TIP4PEWBOX
+Loading: TIP5PBOX
+Loading: TP3
+Loading: TP4
+Loading: TP5
+Loading: TPF
+>> HOH = TP3  # set default water model
+>> WAT = TP3 
+>> loadOff atomic_ions.lib  # load ions library
+Loading library: /programs/amber/dat/leap/lib/atomic_ions.lib
+Loading: AG
+Loading: AL
+Loading: Ag
+Loading: BA
+Loading: BR
+Loading: Be
+Loading: CA
+Loading: CD
+Loading: CE
+Loading: CL
+Loading: CO
+Loading: CR
+Loading: CS
+Loading: CU
+Loading: CU1
+Loading: Ce
+Loading: Cl-
+Loading: Cr
+Loading: Dy
+Loading: EU
+Loading: EU3
+Loading: Er
+Loading: F
+Loading: FE
+Loading: FE2
+Loading: GD3
+Loading: H3O+
+Loading: HE+
+Loading: HG
+Loading: HZ+
+Loading: Hf
+Loading: IN
+Loading: IOD
+Loading: K
+Loading: K+
+Loading: LA
+Loading: LI
+Loading: LU
+Loading: MG
+Loading: MN
+Loading: NA
+Loading: NH4
+Loading: NI
+Loading: Na+
+Loading: Nd
+Loading: PB
+Loading: PD
+Loading: PR
+Loading: PT
+Loading: Pu
+Loading: RB
+Loading: Ra
+Loading: SM
+Loading: SR
+Loading: Sm
+Loading: Sn
+Loading: TB
+Loading: TL
+Loading: Th
+Loading: Tl
+Loading: Tm
+Loading: U4+
+Loading: V2+
+Loading: Y
+Loading: YB2
+Loading: ZN
+Loading: Zr
+>> # to use ions for TIP5P, you will need to use a different frcmod below
+>> # If desired, see the AMBER manual for additional ion force field options.
+>> ionsff = loadamberparams frcmod.ionsjc_tip3p  # set ion params for TIP3P
+Loading parameters: /programs/amber/dat/leap/parm/frcmod.ionsjc_tip3p
+Reading force field modification type file (frcmod)
+Reading title:
+Monovalent ion parameters for Ewald and TIP3P water from Joung & Cheatham JPCB (2008)
+(UNKNOWN ATOM TYPE: Li+)
+(UNKNOWN ATOM TYPE: Na+)
+(UNKNOWN ATOM TYPE: K+)
+(UNKNOWN ATOM TYPE: Rb+)
+(UNKNOWN ATOM TYPE: Cs+)
+(UNKNOWN ATOM TYPE: F-)
+(UNKNOWN ATOM TYPE: Cl-)
+(UNKNOWN ATOM TYPE: Br-)
+(UNKNOWN ATOM TYPE: I-)
+> 
+> loadamberparams frcmod.glycam06_intraring_doublebond_protonatedacids
+Loading parameters: ./frcmod.glycam06_intraring_doublebond_protonatedacids
+Reading force field modification type file (frcmod)
+Reading title:
+MASS
+> loadoff structure.off 
+Loading library: ./structure.off
+Loading: CONDENSEDSEQUENCE
+> ## 
+> ## The term CONDENSEDSEQUENCE is defined in the file structure.off
+> ##     at the very top of the file.  The term is used throughout
+> ##     the file as well.  If your off file uses a different name/label
+> ##     for your structure, then you should change the next two 
+> ##     lines accordingly.
+> check CONDENSEDSEQUENCE 
+Checking 'CONDENSEDSEQUENCE'....
+
+/programs/amber/bin/teLeap: Warning!
+The unperturbed charge of the unit (-4.000000) is not zero.
+
+/programs/amber/bin/teLeap: Warning!
+Close contact of 1.433294 angstroms between .R<4YB 6>.A<H3M 25> and .R<4YB 9>.A<H3M 25>
+Checking parameters for unit 'CONDENSEDSEQUENCE'.
+Checking for bond parameters.
+Checking for angle parameters.
+check:  Warnings: 2
+Unit is OK.
+> saveamberparm CONDENSEDSEQUENCE unminimized-gas.parm7 unminimized-gas.rst7
+Checking Unit.
+
+/programs/amber/bin/teLeap: Warning!
+The unperturbed charge of the unit (-4.000000) is not zero.
+
+/programs/amber/bin/teLeap: Note.
+Ignoring the warning from Unit Checking.
+
+Building topology.
+Building atom parameters.
+Building bond parameters.
+Building angle parameters.
+Building proper torsion parameters.
+Building improper torsion parameters.
+ total 24 improper torsions applied
+Building H-Bond parameters.
+Incorporating Non-Bonded adjustments.
+Not Marking per-residue atom chain types.
+Marking per-residue atom chain types.
+ (no restraints)
+> quit
+	Quit
+
+Exiting LEaP: Errors = 0; Warnings = 3; Notes = 1.

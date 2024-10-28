@@ -1,0 +1,13 @@
+verbosity 0
+logfile unminimized-t3p.leaplog
+source leaprc.GLYCAM_06j-1 
+loadamberparams frcmod.glycam06_intraring_doublebond_protonatedacids
+loadamberparams frcmod.ionsjc_tip3p
+mol=loadmol2 min-gas.mol2
+addIons mol Na+ 0
+addIons mol Cl- 0
+solvateOct mol TIP3PBOX 12.0 iso 0.97
+saveamberparm mol unminimized-t3p.parm7 unminimized-t3p.rst7
+savepdb mol unminimized-t3p.pdb
+quit
+

@@ -1,0 +1,47 @@
+{
+  "timestamp": null,
+  "entity": {
+    "type": "Sequence",
+    "requestID": null,
+    "services": {
+      "evaluation": {
+        "type": "Evaluate",
+        "givenName": null,
+        "myUuid": null,
+        "inputs": null,
+        "options": null
+      }
+    },
+    "responses": null,
+    "resources": null,
+    "notices": null,
+    "procedural_options": {
+      "context": "website",
+      "force_serial_execution": false,
+      "use_library": true,
+      "strict_library": true,
+      "build_default_on_evaluation": true,
+      "md_minimize": true,
+      "number_structures_hard_limit": 8
+    },
+    "options": null,
+    "inputs": {
+      "sequence": {
+        "payload": "DManpa1-OH",
+        "format": "GlycamCondensed"
+      },
+      "sequenceVariants": null,
+      "systemSolvationOptions": null,
+      "geometryOptions": null,
+      "buildOptions": null,
+      "evaluationOptions": null,
+      "drawOptions": null
+    },
+    "outputs": null
+  },
+  "project": null,
+  "prettyPrint": true,
+  "mdMinimize": true,
+  "options": null,
+  "notices": []
+}

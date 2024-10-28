@@ -1,8 +1,0 @@
-[INFO] - Mon May 22 07:07:12 EDT 2023 - Status log opened.
-[INFO] - Mon May 22 07:07:12 EDT 2023 - This job is running in a Slurm cluster.
-[INFO] - Mon May 22 07:07:12 EDT 2023 - Sourcing of AMBERHOME[=/programs/amber]/amber.sh completed
-[INFO] - Mon May 22 07:07:12 EDT 2023 - Gas-phase tleap processing completed
-[INFO] - Mon May 22 07:07:12 EDT 2023 - Gas-phase minimization completed
-[INFO] - Mon May 22 07:07:12 EDT 2023 - Post-gas-phase cpptraj processing completed
-[INFO] - Mon May 22 07:07:13 EDT 2023 - Solvent-phase (T3P) tleap processing completed
-[INFO] - Mon May 22 07:07:13 EDT 2023 - Solvent-phase (T5P) tleap processing completed
