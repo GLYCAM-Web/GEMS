@@ -6,8 +6,8 @@
 				"type": "RunMD",
 				"givenName": "Test of RunMD",
 				"inputs": {
-					"parameter-topology-file": "/programs/gems/tests/correct_outputs/008_reference/cb_final_state/Builds/19b670a1-5621-415a-a708-537ce0fe5491/New_Builds/8ddcc916-47db-5426-828c-fc24aae19d39/unminimized-t5p.parm7",
-					"input-coordinate-file":  "/programs/gems/tests/correct_outputs/008_reference/cb_final_state/Builds/19b670a1-5621-415a-a708-537ce0fe5491/New_Builds/8ddcc916-47db-5426-828c-fc24aae19d39/unminimized-t5p.rst7"
+					"parameter-topology-file": "/programs/gems/tests/correct_outputs/008_reference/Part-4_final-state/cb/Builds/8a36e191-1716-4415-a21d-5c2d3d55e78e/New_Builds/8ddcc916-47db-5426-828c-fc24aae19d39/unminimized-t5p.parm7",
+					"input-coordinate-file":  "/programs/gems/tests/correct_outputs/008_reference/Part-4_final-state/cb/Builds/8a36e191-1716-4415-a21d-5c2d3d55e78e/New_Builds/8ddcc916-47db-5426-828c-fc24aae19d39/unminimized-t5p.rst7"
 				}
 			}
 		}
