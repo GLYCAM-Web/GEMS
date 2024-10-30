@@ -59,7 +59,7 @@ class DateReversioner:
         if "date" not in self.new_version:
             raise RuntimeError("Template file does not have a date, cannot update.")
 
-        if "date" not in self.old_version:
+        if self.old_version is None or "date" not in self.old_version:
             # if no date is found, lets update to a versioned file
             is_outdated = True
         else:
