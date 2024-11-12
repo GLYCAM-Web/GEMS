@@ -99,8 +99,8 @@ check_gemshome() {
 check_gmmldir() {
     if [ ! -d "$1" ]; then
         echo ""
-        echo "Error:  gmml directory does not exist. If your GEMSHOME is set correctly,"
-        echo "it should be here: $GEMSHOME/gmml"
+        echo "Error: $1 directory does not exist. If your GEMSHOME is set correctly,"
+        echo "it should be here: $1"
         exit 1
     fi
 }
@@ -251,6 +251,7 @@ check_pull_repo() {
 gemshome=`pwd`
 check_gemshome $gemshome
 check_gmmldir $GEMSHOME/gmml
+check_gmmldir $GEMSHOME/gmml2
 check_pull_repo "MD_Utils" "https://github.com/GLYCAM-Web/MD_Utils.git" "$GEMSHOME/External" "stable" "md-test" 
 check_pull_repo "GM_Utils" "https://github.com/GLYCAM-Web/GM_Utils.git" "$GEMSHOME/External" "gm-actual" "gm-test"
 get_numprocs
