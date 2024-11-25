@@ -157,7 +157,7 @@ class Resource(BaseModel, MimeEncodableResourceMixin, FileSystemHelpersMixin):
         """Filename from options or File payload."""
         if self.locationType == "filesystem-path-unix":
             return Path(self.payload).name
-        elif "filename" in self.options:
+        elif self.options is not None and "filename" in self.options:
             return self.options["filename"]
         else:
             log.warning("Has no filename, attempting to use resourceRole")
