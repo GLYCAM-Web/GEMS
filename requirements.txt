@@ -1,4 +1,4 @@
-pydantic==1.10.2
+pydantic==1.10.13
 typing-extensions==4.4.0
 jsonpickle==2.2.0
 jsonschema==4.6.0
