@@ -99,9 +99,7 @@ This will compile GMML and GMML2 with 8 cores.
 
 ## Testing the Installation
 
-Make sure you are still in the *`gems`* directory, and run the following command to test the installation: 
-
-Please note that there are tests within the `tests/` directory but many will fail because they require you to have a stack running that can handle DNS because we submit a JSON request with one of the tests (specifically test 008). These tests are expected to fail if you are only running GEMS. 
+Most current tests are website-centered and will require you to have certain containers running and that those containers have access to an HPC cluster on the back-end for running simulations. Here is a test that should work on most systems, regardless of environment. 
 
 Make sure you are still in the *`gems`* directory, and run the following command, which is all on one line:   
 python3 bin/AmberMDPrep.py tests/inputs/016.AmberMDPrep.4mbzEdit.pdb
