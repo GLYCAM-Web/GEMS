@@ -1,28 +1,17 @@
 # GLYCAM Extensible Modeling Scripts (GEMS)
 
 This code serves as a convenient interface to the molecular modeling code
-in the [Glycam Molecular Modeling Library](https://github.com/GLYCAM-Web/gmml).
-
-The code is constantly in flux, but the main idea is that you use a JSON
-file as input to the bin/delegate script.  
-
-We need more docs.  Would you like to help?
-
-# Used by [GLYCAM-Web](https://glycam.org)
-
-This code also serves as the main interface to GLYCAM-Web.  Use of 
+in the [Glycam Molecular Modeling Library](https://github.com/GLYCAM-Web/gmml). 
+The interface is used by [GLYCAM-Web](https://glycam.org). Use of
 this interface ensures that the services provided by the website give
-exactly the same results as you would get using GEMS on the command line.
+exactly the same results as you would get using GEMS on the command line. 
+The general concept is that a JSON file is used as input to the bin/delegate script.
 
 # Funding Sources
 
-We are very grateful to our funders.  
-[Please check them out!](https://github.com/GLYCAM-Web/website/blob/master/funding.md)
-
+GLYCAM-Web is made possible by our [funders](https://github.com/GLYCAM-Web/website/blob/master/funding.md)
 
 # Installing GEMS (GLYCAM Extensible Modeling Script)
-
-This document is likely somewhat out of date.  We're working on that.
 
 [Prerequisites](#prerequisites)  
 [Obtaining the software](#obtaining-the-software)  
@@ -61,18 +50,20 @@ For other Linux distros, please follow the instructions for the package manageme
 
 Once you have installed the prerequisites, you can install the GEMS software. 
 
-**NOTE** - installing GEMS **does not** require `root` access. 
+**NOTE** - installing GEMS **does not** require `root` access. We do not recommend installing GEMS or GMML as root. 
 
 Change to the directory where you will install GEMS, and clone the GEMS repo from Github: 
 
 `git clone https://github.com/GLYCAM-Web/gems.git`
 
-This will create a *`gems`* directory. Change to the *`gems`* directory, and clone the GMML repo from Github: 
+This will create a *`gems`* directory. Change to the *`gems`* directory, and clone the GMML repos from Github: 
 
 ```bash
 cd gems/
 git clone https://github.com/GLYCAM-Web/gmml.git
+git clone https://github.com/GLYCAM-Web/gmml2.git
 ```
+Both repos are currently required. 
 
 ---
 
@@ -100,7 +91,7 @@ There are a handful of ways to use more processors while compiling:
 .../gems$ make.sh -j 8
 ``` 
 
-This will compile GMML with 8 cores.
+This will compile GMML and GMML2 with 8 cores.
 
 ## Testing the Installation
 
