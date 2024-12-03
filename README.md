@@ -11,7 +11,11 @@ The general concept is that a JSON file is used as input to the bin/delegate scr
 
 GLYCAM-Web is made possible by our [funders](https://github.com/GLYCAM-Web/website/blob/master/funding.md)
 
-# Installing GEMS (GLYCAM Extensible Modeling Script)
+# Using GEMS via our API
+
+Our API is hosted on glycam.org. Here is the [JSON API Documentation](https://github.com/GLYCAM-Web/website/tree/master/Examples/JsonApi)
+
+# Installing GEMS locally (GLYCAM Extensible Modeling Script)
 
 [Prerequisites](#prerequisites)  
 [Obtaining the software](#obtaining-the-software)  
