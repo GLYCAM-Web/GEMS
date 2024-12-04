@@ -9,7 +9,7 @@ from gemsModules.{{cookiecutter.gems_module}}.services.settings.duplicates_modul
 from gemsModules.logging.logger import Set_Up_Logging
 log = Set_Up_Logging(__name__)
 
-class {{cookiecutter.service_name}}_Duplicate_Requests_Manager(Duplicate_Requests_Manager):
+class {{cookiecutter.gems_module}}_Duplicate_Requests_Manager(Duplicate_Requests_Manager):
 
     def get_available_services(self) -> List[str]:
         return get_services_list.execute()

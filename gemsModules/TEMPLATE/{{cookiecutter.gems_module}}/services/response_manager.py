@@ -3,16 +3,15 @@
 from gemsModules.common.services.response_manager import Response_Manager
 from gemsModules.common.main_api_notices import Notices
 
-from gemsModules.{{cookiecutter.gems_module}}.main_api import {{cookiecutter.service_name}}_Entity
+from gemsModules.{{cookiecutter.gems_module}}.main_api import {{cookiecutter.gems_module}}_Entity
 
 from gemsModules.logging.logger import Set_Up_Logging
 log = Set_Up_Logging(__name__)
 
 
-class {{cookiecutter.service_name}}_Response_Manager(Response_Manager):
-
+class {{cookiecutter.gems_module}}_Response_Manager(Response_Manager):
     def generate_response_entity(self):
-        self.response_entity = {{cookiecutter.service_name}}_Entity(type="{{cookiecutter.service_name}}")
+        self.response_entity = {{cookiecutter.gems_module}}_Entity(type="{{cookiecutter.gems_module}}")
         self.response_entity.notices = Notices()
         request_aaop_list=self.aaop_tree_pair.input_tree.make_linear_list()
         response_aaop_list=self.aaop_tree_pair.output_tree.make_linear_list()
@@ -20,6 +19,7 @@ class {{cookiecutter.service_name}}_Response_Manager(Response_Manager):
         log.debug(request_aaop_list)
         log.debug("the_response_aaop_list is: ")
         log.debug(response_aaop_list)
+        
         for aaop in request_aaop_list:
             this_service = aaop.The_AAO.copy(deep=True)
             this_service.myUuid = aaop.ID_String

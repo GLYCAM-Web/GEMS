@@ -3,7 +3,7 @@
         "type": "{{ cookiecutter.gems_module }}",
         "services": {
             "default_{{ cookiecutter.service_name }}": {
-                "type": "{{ cookiecutter.gems_module }}"
+                "type": "{{ cookiecutter.service_name }}"
             }
         }
     }

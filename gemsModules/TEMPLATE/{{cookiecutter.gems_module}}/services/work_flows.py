@@ -16,7 +16,7 @@ def get_Service_Work_Flows() -> Service_Work_Flows_{{cookiecutter.gems_module}}:
     error_list = [ error ]
     list_services_list = [ list_services ]
     marco_list = [ marco ]
-    {{cookiecutter.gems_module}} = [ {{cookiecutter.service_name}} ]
+    {{cookiecutter.service_name}}_list = [ {{cookiecutter.service_name}} ]
     status_list = [ status ]
     
     Service_Work_Flows = Service_Work_Flows_{{cookiecutter.gems_module}}

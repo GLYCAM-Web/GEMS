@@ -2,4 +2,4 @@
 from gemsModules.logging.logger import Set_Up_Logging
 log = Set_Up_Logging(__name__)
 
-WhoIAm = '{{cookiecutter.service_name}}'
+WhoIAm = '{{cookiecutter.gems_module}}'
