@@ -1,7 +1,7 @@
 from gemsModules.common.code_utils import GemsStrEnum
 
 from gemsModules.common.services.settings.known_available import (
-    Available_Services as Common_Available_Services,
+    Module_Available_Services as Common_Available_Services,
 )
 
 from gemsModules.complex.settings import Complex_Allowed_File_Formats
