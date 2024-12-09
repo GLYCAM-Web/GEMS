@@ -18,7 +18,7 @@ class Known_Entities(GemsStrEnum):
     Status = "Status"
     BatchCompute = "BatchCompute"
     Conjugate = "Conjugate"
-    CommonServicer = "CommonServicer"
+    #CommonServicer = "CommonServicer"
     MmService = "MmService"
     Query = "Query"
     Sequence = "Sequence"
@@ -45,8 +45,8 @@ from gemsModules.complex.glycomimetics.receive import receive as glycomimetics
 
 
 Known_Entity_Reception_Modules = {
-    #'BatchCompute' : batchcompute,  for now, still deprecated
-    "CommonServicer": common,
+    #'BatchCompute' : batchcompute, # for now, still deprecated
+    #"CommonServicer": common, # No way to call this directly
     "MDaaS": mdaas,
     "MmService": mmservice,
     "Status": status,
