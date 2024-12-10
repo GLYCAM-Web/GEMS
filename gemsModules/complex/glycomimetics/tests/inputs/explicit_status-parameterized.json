@@ -1,0 +1,20 @@
+{
+    "entity": {
+      "type": "Glycomimetics",
+      "services": {
+        "evaluation_of_pdb": {
+          "type": "Status",
+          "inputs": {
+            "resources": [
+              {
+                "locationType": "filesystem-path-unix",
+                "resourceFormat": "chemical/pdb",
+                "resourceRole": "pUUID",
+                "payload": "${pUUID}"
+              }
+            ]
+          }
+        }
+      }
+    }
+}

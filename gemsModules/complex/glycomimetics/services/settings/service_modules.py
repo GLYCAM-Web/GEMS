@@ -5,17 +5,14 @@ from gemsModules.common.services.list_services.server import (
     Serve as serve_list_services,
 )
 from gemsModules.common.services.marco.server import Serve as serve_marco
-from gemsModules.common.services.status.server import Serve as serve_status
-from gemsModules.complex.glycomimetics.services.Build_Selected_Positions.server import (
-    Serve as serve_build,
-)
-from gemsModules.complex.glycomimetics.services.ProjectManagement.server import (
-    Serve as serve_ProjectManagement,
-)
 
+
+from ..Build_Selected_Positions.server import Serve as serve_build
+from ..ProjectManagement.server import Serve as serve_ProjectManagement
 from ..Validate.server import Serve as serve_validate
 from ..Evaluate.server import Serve as serve_evaluate
 from ..Analyze.server import Serve as serve_analyze
+from ..Status.server import Serve as serve_status
 
 from gemsModules.logging.logger import Set_Up_Logging
 
