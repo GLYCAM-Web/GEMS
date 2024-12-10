@@ -62,7 +62,7 @@ class Glycomimetics_Request_Data_Filler(Request_Data_Filler):
             log.debug(f"GM/RequestDataFiller: Prepending project_dir to resources for {aaop.AAO_Type}")
             for r in aaop.The_AAO.inputs.resources:
                 if not roles_to_find:
-                    break
+                    return True
                 if (
                     r.resourceRole in roles_to_find
                     and r.locationType == "filesystem-path-unix"
@@ -75,7 +75,11 @@ class Glycomimetics_Request_Data_Filler(Request_Data_Filler):
                     
                     roles_to_find.remove(r.resourceRole)
                     break
-                
+        
+        if roles_to_find:
+            log.warning(f"GM/RequestDataFiller: Could not find resources for roles: {roles_to_find}")
+        return False
+    
     def __fill_build_aaop(self, i: int, aaop: AAOP) -> List[AAOP]:
         # Please note, if you need values from response_project, make sure they are initialized appropriately by project manager.
 
