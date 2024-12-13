@@ -1,0 +1,11 @@
+{
+	"entity": {
+		"type": "Glycomimetics",
+		"services": {
+			"isAnybodyHome": {
+				"type": "Marco"
+			}
+		}
+	},
+	"prettyPrint": true
+}

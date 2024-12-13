@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+from enum import auto
 from pydantic import BaseModel, Field, ValidationError, validator
 from typing import List, Optional, Union
 
@@ -8,7 +9,6 @@ from gemsModules.complex.glycomimetics.main_api import (
     Glycomimetics_Service_Request,
     Glycomimetics_Service_Response,
 )
-from gemsModules.complex.glycomimetics.services.common_api import PDB_File_Resource
 
 from gemsModules.logging.logger import Set_Up_Logging
 
@@ -27,7 +27,7 @@ class Status_output_Resource(Resource):
 
 class Status_Resources(Resources):
     __root__: List[
-        Union[PDB_File_Resource, Status_input_Resource, Status_output_Resource]
+        Union[Status_input_Resource, Status_output_Resource]
     ] = None
 
 
@@ -38,24 +38,30 @@ class Status_Inputs(BaseModel):
         description="UUID of Project",
     )
 
-    receptor: Optional[str] = Field(
-        None,
-        title="Receptor",
-        description="Receptor PDB file",
-    )
-
     # TODO: see Build.api too and fix this
     # resources: Status_Resources = Status_Resources()
     resources: Resources = Resources()
 
 
-class Status_Outputs(BaseModel):
-    isValid: bool = Field(
-        None,
-        title="Is Valid",
-        description="Is the input valid",
-    )
+class StatusEnum(str):
+    Success = auto()
+    Failure = auto()
+    Pending = auto()
+    Running = auto()
+    NotFound = auto()
 
+class Status_Outputs(BaseModel):
+    status: StatusEnum = Field(
+        None,
+        title="Status",
+        description="Status of the project being checked",
+    )
+    details: Optional[str] = Field(
+        None,
+        title="Details",
+        description="Details about the project status",
+    )
+        
 
 class Status_Request(Glycomimetics_Service_Request):
     typename: str = Field("Status", alias="type")
