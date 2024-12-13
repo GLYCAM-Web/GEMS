@@ -2,7 +2,7 @@
     "entity": {
       "type": "Glycomimetics",
       "services": {
-        "evaluation_of_pdb": {
+        "check_build_status": {
           "type": "Status",
           "inputs": {
             "pUUID": "${pUUID}"

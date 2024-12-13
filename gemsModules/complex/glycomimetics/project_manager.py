@@ -16,6 +16,10 @@ log = Set_Up_Logging(__name__)
 
 class Glycomimetics_Project_Manager(Project_Manager):
     def process(self) -> GlycomimeticsProject:
+        # log.debug("Glycomimetics_Project_Manager.process")
+        # log.debug("incoming_entity: %s", self.incoming_entity)
+        # log.debug("incoming_project: %s", self.incoming_project)
+        
         self.instantiate_response_project()
         # Broken:
         # self.fill_response_project_from_incoming_project()

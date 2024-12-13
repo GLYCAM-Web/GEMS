@@ -5,11 +5,15 @@ from typing import List, Optional, Union
 
 from gemsModules.common.main_api_resources import Resource, Resources
 
-from gemsModules.complex.glycomimetics.main_api import (
-    Glycomimetics_Service_Request,
-    Glycomimetics_Service_Response,
+# from gemsModules.complex.glycomimetics.main_api import (
+#     Glycomimetics_Service_Request,
+#     Glycomimetics_Service_Response,
+# )
+from gemsModules.common.main_api_services import (
+    Service_Request,
+    Service_Response,
 )
-
+    
 from gemsModules.logging.logger import Set_Up_Logging
 
 log = Set_Up_Logging(__name__)
@@ -63,12 +67,12 @@ class Status_Outputs(BaseModel):
     )
         
 
-class Status_Request(Glycomimetics_Service_Request):
+class Status_Request(Service_Request):
     typename: str = Field("Status", alias="type")
     # the following must be redefined in a child class
     inputs: Status_Inputs = Status_Inputs()
 
 
-class Status_Response(Glycomimetics_Service_Response):
+class Status_Response(Service_Response):
     typename: str = Field("Status", alias="type")
     outputs: Status_Outputs = Status_Outputs()

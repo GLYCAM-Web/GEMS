@@ -41,30 +41,28 @@ def execute(inputs: Status_Inputs) -> Status_Outputs:
             if "Pdb2glycam matching successful." in line:
                 contains_success_str = True
                 break
-            
-    # if the main status doesn't exist, it might not be a Build project, look for errors during evaluation:
-    if not main_status_txt.exists():
-        # if evaluate_err non-empty, then the project failed during evaluation
-        if non_empty_evaluate_err or not contains_success_str:
-            service_outputs.status = "Failure"
-            service_outputs.details = "Project failed during evaluation"
-            return service_outputs, service_notices
-        else:
-            service_outputs.status = "Success"
-            service_outputs.details = "Project successfully evaluated"
-            return service_outputs, service_notices
+
+    if non_empty_evaluate_err or not contains_success_str:
+        service_outputs.status = "Failure"
+        service_outputs.details = "Project failed during evaluation"
     else:
-        # if it exists, the last line of this file becomes the status details, if we get to
-        # "Simulations completed." then it is a success
+        service_outputs.status = "Success"
+        service_outputs.details = "Project successfully evaluated"
+            
+    if main_status_txt.exists() and service_outputs.status != "Failure":
         with open(main_status_txt, "r") as f:
             for line in f:
                 if "Simulations completed." in line:
                     service_outputs.status = "Success"
                     service_outputs.details = line
-                    return service_outputs, service_notices
+                    break
                 elif "error" in line.lower():
                     service_outputs.status = "Failure"
                     service_outputs.details = line
-                    return service_outputs, service_notices
+                    break
+                else:
+                    service_outputs.status = "Pending"
+                    service_outputs.details = line
+
 
     return service_outputs, service_notices
