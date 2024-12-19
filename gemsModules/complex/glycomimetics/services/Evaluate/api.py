@@ -58,15 +58,18 @@ class Evaluate_Inputs(BaseModel):
 
 
 class Evaluate_Outputs(BaseModel):
-    # TODO/Q: Should this be here? Should we have libraries per pos or per eval?
+    # TODO/Q: Should this be here?
     Available_Libraries: List[str] = Field(
         default_factory=Moiety_Library_Names.get_json_list,
         title="Available Libraries",
         description="List of available libraries",
     )
-    # TODO: Use Position_Modification_Options instead.
+    Condensed_Sequence: Optional[str] = Field(
+        None,
+        title="Condensed Sequence",
+        description="GLYCAM condensed sequence representing the ligand in the protein co-complex",
+    )
     Available_Modification_Options: Optional[List[Modification_Position]] = Field(
-        # None,
         default_factory=list,
         title="Available Modification Options",
         description="List of available modification options",
