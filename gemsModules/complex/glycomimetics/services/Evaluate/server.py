@@ -16,7 +16,6 @@ def Serve(service: Evaluate_Request) -> Evaluate_Response:
     log.debug(f"Eval service.inputs: {service.inputs}")
     response = Evaluate_Response()
 
-    # Execute the service
-    response.outputs = execute(service.inputs)
-
+    response.outputs, response.notices = execute(service.inputs)
+    
     return response

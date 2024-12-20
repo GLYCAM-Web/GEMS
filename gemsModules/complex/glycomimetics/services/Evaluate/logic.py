@@ -67,8 +67,8 @@ def execute(inputs: Evaluate_Inputs) -> Evaluate_Outputs:
                     pdb_filename = Path(pdb_fpath).name
                     
                     condensed_sequence, available_positions = evaluate_wrapper.execute(parent_dir, pdb_filename)
-
-                    service_outputs.Condense_dSequence = condensed_sequence
+                    service_outputs.Condensed_Sequence = condensed_sequence
+                    
                     for pos in available_positions:
                         service_outputs.Available_Modification_Options.append(pos)
                     log.debug(

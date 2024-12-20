@@ -22,7 +22,11 @@ def execute(parent_dir, pdb_filename: str) -> tuple[CondensedSequence, list[Modi
     if result.returncode != 0:
         raise RuntimeError(f"Error running GM/Evaluation step, return code: {result.returncode}")
     
-    with open(os.path.join(parent_dir, "available_atoms.txt")) as f:
+    output_file = os.path.join(parent_dir, "available_atoms.txt")
+    if not os.path.exists(output_file):
+        raise FileNotFoundError(f"Output file not found: {output_file}")
+    
+    with open(output_file) as f:
         buffer = f.read().splitlines()
     
     # If empty, We'll need to catch this somehow.
@@ -32,10 +36,10 @@ def execute(parent_dir, pdb_filename: str) -> tuple[CondensedSequence, list[Modi
     # These next few lines are definitely a simplification.
     # Assuming there are at least 2 lines,
     if len(buffer) < 2:
-        raise ValueError("Unexpected data format during GM/Evaluation step")    
+        raise ValueError("Unexpected data format during GM/Evaluation step, not enough data")  
     # and there is always a condensed sequence present on the first line that is colon delimited.
-    if not buffer[0].startswith("Condensed Sequence:"):
-        raise ValueError("Unexpected data format during GM/Evaluation step")
+    if not (buffer[0].startswith("Oligosaccharide") and "condensed sequence:" in buffer[0]):
+        raise ValueError("Unexpected data format during GM/Evaluation step, missing condensed sequence")
    
     condensed_sequence = buffer[0].split(":")[1].strip()
 

@@ -208,6 +208,18 @@ class Notices(BaseModel):
             Message=message,
             AdditionalInfo=additionalInfo
         )
+        
+    def __iter__(self):
+        return iter(self.__root__)
+    
+    def __next__(self):
+        return next(self.__root__)
+    
+    def extend(self, other):
+        self.__root__.extend(other.__root__)
+    
+    def append(self, notice: Notice):
+        self.__root__.append(notice)
 
 
 def generateSchema():
