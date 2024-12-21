@@ -11,6 +11,12 @@ def argparser():
         "json_index",
         help="The index of the json object to be returned separated by periods",
     )
+    parser.add_argument(
+        "--indent",
+        help="The indent to be used when printing the json object",
+        type=int,
+        default=None,
+    )
 
     parser.add_argument("--json_file", help="The json file to be read")
 
@@ -38,8 +44,10 @@ def main():
         else:
             current_object = current_object[key]
 
-    print(current_object, end="")
-
-
+    if args.indent:
+        print(json.dumps(current_object, indent=args.indent))
+    else:
+        print(current_object, sep="")
+        
 if __name__ == "__main__":
     main()

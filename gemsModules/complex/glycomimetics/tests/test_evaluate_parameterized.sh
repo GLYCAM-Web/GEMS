@@ -1,5 +1,29 @@
 #!/bin/bash
 
+clean_and_compare() {
+    file1=$1
+    file2=$2
+    threshold=${3:-60}  # default to 60% if not specified
+    
+    # Clean files
+    sed 's/[a-f0-9]\{8\}-[a-f0-9]\{4\}-[a-f0-9]\{4\}-[a-f0-9]\{4\}-[a-f0-9]\{12\}//g' "$file1" > tmp1
+    sed 's/[a-f0-9]\{8\}-[a-f0-9]\{4\}-[a-f0-9]\{4\}-[a-f0-9]\{4\}-[a-f0-9]\{12\}//g' "$file2" > tmp2
+
+    # Show difference with context
+    diff tmp1 tmp2
+    
+    if cmp -s tmp1 tmp2; then
+        echo "Files match 100% after removing UUIDs"
+        rm tmp1 tmp2
+        return 0
+    else
+        echo "Files differ completely"
+        rm tmp1 tmp2
+        return 1
+    fi
+}
+
+
 cd $GEMSHOME
 
 userdata_dir=${1:-"/website/userdata/complex/gm"}
@@ -49,7 +73,8 @@ for pair in "${PAIRS[@]}"; do
 
     # check if the output is as expected
     output=$(echo $eval_response | python tests/utilities/json_ripper.py entity.responses.evaluation_of_pdb)
-    diff <(echo $output) <(cat $expected_output)
+    # diff <(echo $output) <(cat $expected_output)
+    clean_and_compare <(echo $output) $expected_output 60
     if [ $? -ne 0 ]; then
         echo "Error: Output for this test does not match expected output"
         failures+=($pdb_file)

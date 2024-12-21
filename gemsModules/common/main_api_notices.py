@@ -79,6 +79,10 @@ class Notices(BaseModel):
     __root__ : List[Notice] = None
     _defaultNoticeTypes : List[Notice] = PrivateAttr(default_factory=makeDefaultNoticesList)
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if self.__root__ is None:
+            self.__root__ = []
 
     def printDefaults(self, sendTo='logs', style='easyRead'):
         self.printNotices(sendTo=sendTo, style=style, whatToPrint='Defaults')
@@ -99,10 +103,8 @@ class Notices(BaseModel):
         else :
             log.error("The sendTo option given to Notices.printDefaults() is not known.  Cannot print.")
 
-
     def defaultNoticesString(self, style='easyRead'):
         return self.noticesString(style=style, whatToPrint='Defaults')
-
 
     def noticesString(self, style='easyRead', whatToPrint='Notices'):
         if whatToPrint == 'Notices':
@@ -214,6 +216,9 @@ class Notices(BaseModel):
     
     def __next__(self):
         return next(self.__root__)
+    
+    def __len__(self):
+        return len(self.__root__)
     
     def extend(self, other):
         self.__root__.extend(other.__root__)

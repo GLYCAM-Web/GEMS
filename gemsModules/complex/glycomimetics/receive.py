@@ -20,4 +20,13 @@ def receive(incomingString: str) -> str:
         return Glycomimetics_manager_error_response
 
     log.debug("The incoming string is valid")
+    
+    # Write the response to a a file in the project directory
+    output_path = Glycomimetics_manager.transaction.outputs.project.project_dir
+    response_json_path = output_path + "/response.json"
+    with open(response_json_path, "w") as f:
+        f.write(Glycomimetics_manager.transaction.get_outgoing_string(prettyPrint=True))
+        f.write("\n")
+    
+    # Return the response in a condensed format for the API
     return Glycomimetics_manager.transaction.get_outgoing_string()
