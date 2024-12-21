@@ -69,7 +69,7 @@ class Modification_Position(BaseModel):
     )
     Atom_Number: str = Field(
         ...,
-        description="The atom number in the residue."
+        description="The atom number that will be attached."
     )
     Residue_Name_Glycam: str = Field(
         ...,

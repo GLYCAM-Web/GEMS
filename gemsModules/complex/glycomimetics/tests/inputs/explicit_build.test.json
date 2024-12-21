@@ -10,19 +10,22 @@
               "resourceRole": "Complex",
               "locationType": "filesystem-path-unix",
               "resourceFormat": "chemical/pdb",
-              "payload": "/programs/gems/tests/inputs/2ZG1.pdb"
+              "payload": "/programs/gems/gemsModules/complex/glycomimetics/tests/pdbs/1_3ubn_clean.pdb"
             },
             {
               "resourceRole": "Selected_Modification_Options",
               "locationType": "Payload",
               "resourceFormat": "python-dict",
               "payload": {
-                "Position": {
-                  "Residue_Identifier": "241",
-                  "Residue_Name": "SIA",
-                  "Chain_Identifier": "A",
-                  "Attachment_Atom": "C9",
-                  "Replaced_Atom": "O9"
+                "Position": { 
+                  "Residue_Name": "NAG", 
+                  "Chain_Identifier": "M", 
+                  "Residue_Number": "1", 
+                  "Moiety_Attachment_Atom": "N2", 
+                  "Atom_Number": "2531", 
+                  "Residue_Name_Glycam": "DGlcpNAcb", 
+                  "Residue_Number_Glycam": "324", 
+                  "Atom_Number_Glycam": "2531"
                 }
               }      
             }
