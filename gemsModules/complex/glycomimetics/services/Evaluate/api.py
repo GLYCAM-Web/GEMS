@@ -96,7 +96,7 @@ class Evaluate_Request(Glycomimetics_Service_Request):
 class Evaluate_Response(Glycomimetics_Service_Response):
     typename: str = Field("Evaluate", alias="type")
     outputs: Evaluate_Outputs = Evaluate_Outputs()
-
+    notices: Notices = Notices()
 
 if __name__ == "__main__":
     # generate a blank request

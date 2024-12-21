@@ -18,7 +18,8 @@ fi
 ulimit -c 0
 
 # Run with timeout to prevent infinite hangs
-timeout 600 $EVALUATE_EXE $PDB_FILE $PROJECT_DIR/available_atoms.txt > $PROJECT_DIR/evaluation.log 2> $PROJECT_DIR/evaluate.err
+# TODO: We need to run this in the background eventually, and let GM/Status check GM/Evaluate projects
+timeout 30 $EVALUATE_EXE $PDB_FILE $PROJECT_DIR/available_atoms.txt > $PROJECT_DIR/evaluation.log 2> $PROJECT_DIR/evaluate.err
 EXIT_CODE=$?
 
 # Check for different failure scenarios
@@ -27,7 +28,7 @@ case $EXIT_CODE in
         exit 0
         ;;
     124) # timeout occurred
-        echo "Process timed out after 600 seconds" >> $PROJECT_DIR/evaluate.err
+        echo "Process timed out after 30 seconds" >> $PROJECT_DIR/evaluate.err
         exit 1
         ;;
     139) # Segmentation fault (SIGSEGV)
