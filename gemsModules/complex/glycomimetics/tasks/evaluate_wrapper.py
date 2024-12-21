@@ -24,7 +24,8 @@ def execute(parent_dir: str, pdb_filename: str) -> tuple[list[CondensedSequence]
     
     result = subprocess.run([EVALUATE_WRAPPER, parent_dir, pdb_filename])
     if result.returncode != 0:
-        raise RuntimeError(f"Error running GM/Evaluation step, return code: {result.returncode}")
+        log.debug(f"Error running GM/Evaluation step, return code: {result.returncode}")
+        # raise RuntimeError(f"Error running GM/Evaluation step, return code: {result.returncode}")
     
     output_file = os.path.join(parent_dir, "available_atoms.txt")
     if not os.path.exists(output_file):
@@ -32,10 +33,11 @@ def execute(parent_dir: str, pdb_filename: str) -> tuple[list[CondensedSequence]
         if os.path.exists(evaluate_err_file):
             with open(evaluate_err_file) as f:
                 err_msg = f.read().strip()
-            log.error(f"Error during GM/Evaluation step: {err_msg}, raising RuntimeError")
-            raise RuntimeError(f"Error during GM/Evaluation step: {err_msg}")
-        else:
-            raise FileNotFoundError(f"Output file not found: {output_file}")
+            if err_msg:
+                log.error(f"Error during GM/Evaluation step: {err_msg}, raising RuntimeError")
+                raise RuntimeError(f"Error during GM/Evaluation step: {err_msg}")
+        # Will be raised if outputfile is not found and no error message is present.
+        raise FileNotFoundError(f"Output file not found: {output_file}")
     
     with open(output_file) as f:
         buffer = f.read().splitlines()

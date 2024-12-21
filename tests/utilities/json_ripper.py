@@ -35,15 +35,18 @@ def main():
 
     keys = args.json_index.split(".")
     current_object = json_object
-    for key in keys:
-        # check for [index] in key 
-        if "[" in key and "]" in key:
-            key, index = key.split("[")
-            index = index.replace("]", "")
-            current_object = current_object[key][int(index)]
-        else:
-            current_object = current_object[key]
-
+    try:
+        for key in keys:
+            # check for [index] in key 
+            if "[" in key and "]" in key:
+                key, index = key.split("[")
+                index = index.replace("]", "")
+                current_object = current_object[key][int(index)]
+            else:
+                current_object = current_object[key]
+    except KeyError:
+        sys.exit(1)
+        
     if args.indent:
         print(json.dumps(current_object, indent=args.indent))
     else:

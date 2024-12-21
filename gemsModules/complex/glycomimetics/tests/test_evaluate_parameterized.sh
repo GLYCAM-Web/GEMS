@@ -66,10 +66,16 @@ for pair in "${PAIRS[@]}"; do
     eval_response=$(echo $eval_request | ./bin/delegate)
     if [ $? -ne 0 ]; then
         echo "Error: Failed to run test for $pdb_file"
+        echo $eval_response
         failures+=($pdb_file)
     fi
 
     echo "See this test's project directory at: $(echo ${eval_response} | python tests/utilities/json_ripper.py project.project_dir)"
+    if [ $? -ne 0 ]; then
+        echo $eval_response
+        failures+=($pdb_file)
+        continue
+    fi
 
     # check if the output is as expected
     output=$(echo $eval_response | python tests/utilities/json_ripper.py entity.responses.evaluation_of_pdb)
