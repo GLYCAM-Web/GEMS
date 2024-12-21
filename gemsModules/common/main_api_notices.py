@@ -81,8 +81,8 @@ class Notices(BaseModel):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        if self.__root__ is None:
-            self.__root__ = []
+        #if self.__root__ is None:
+        #    self.__root__ = []
 
     def printDefaults(self, sendTo='logs', style='easyRead'):
         self.printNotices(sendTo=sendTo, style=style, whatToPrint='Defaults')
@@ -212,18 +212,28 @@ class Notices(BaseModel):
         )
         
     def __iter__(self):
+        if self.__root__ is None:
+            return iter([])
         return iter(self.__root__)
     
     def __next__(self):
+        if self.__root__ is None:
+            raise StopIteration
         return next(self.__root__)
     
     def __len__(self):
+        if self.__root__ is None:
+            return 0
         return len(self.__root__)
     
     def extend(self, other):
+        if self.__root__ is None:
+            self.__root__ = []
         self.__root__.extend(other.__root__)
     
     def append(self, notice: Notice):
+        if self.__root__ is None:
+            self.__root__ = []
         self.__root__.append(notice)
 
 

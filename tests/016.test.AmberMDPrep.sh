@@ -33,8 +33,9 @@ echo "Sleeping for 1 second to allow for file creation..."
 sleep 1
 
 # echo -e "\nRipped Output Message Bytes: $(wc -c < test${testNumber}_output) (Expected $(wc -c < correct_outputs/test${testNumber}_output))"
-if ! cmp ${test_output} correct_outputs/${test_output} > /dev/null 2>&1; then
+if ! diff ${test_output} correct_outputs/${test_output} > /dev/null 2>&1; then
     printf "Test FAILED! Output file %s different from %s \n" outputs/${test_output} correct_outputs/${test_output}
+    mv $test_output bad_outputs/
     return 1
 fi
 rm $test_output
