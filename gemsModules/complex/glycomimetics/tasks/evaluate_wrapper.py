@@ -51,12 +51,18 @@ def execute(parent_dir, pdb_filename: str) -> tuple[CondensedSequence, list[Modi
     available_positions = []
     for line in available_atoms:
         mp = line.split('-')
+        if len(mp) != 8:
+            raise ValueError(f"Unexpected data format during GM/Evaluation step, invalid modification position found: {line}")
+        
         available_positions.append(Modification_Position(
-            Residue_Identifier=mp[0],
-            Residue_Name=mp[1],
-            Chain_Identifier=mp[2],
-            Attachment_Atom=mp[3],
-            Replaced_Atom=mp[4]
+            Residue_Name=mp[0],
+            Chain_Identifier=mp[1],
+            Residue_Number=mp[2],
+            Moiety_Attachment_Atom=mp[3],
+            Atom_Number=mp[4],
+            Residue_Name_Glycam=mp[5],
+            Residue_Number_Glycam=mp[6],
+            Atom_Number_Glycam=mp[7]
         ))
         
     # return a tuple of the condensed sequence and the available positions.

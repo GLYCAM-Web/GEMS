@@ -48,29 +48,42 @@ class Moiety_Library_Names(GemsStrEnum):
     ketones = "Ketones"
 
 
+from pydantic import BaseModel, Field
+
 class Modification_Position(BaseModel):
-    # TODO: Should be Residue_Number
-    Residue_Identifier: str = Field(
-        ...,
-        description="The residue identifier, typically an integer followed occasionally by a letter.",
-    )
     Residue_Name: str = Field(
         ...,
-        description="The name of the residue.",
+        description="The name of the residue."
     )
     Chain_Identifier: str = Field(
         ...,
-        description="The chain identifier for the residue.",
+        description="The chain identifier for the residue."
     )
-    Attachment_Atom: str = Field(
-        ..., description="The atom in the residue to which the mods will be attached."
-    )
-    Replaced_Atom: str = Field(
+    Residue_Number: str = Field(
         ...,
-        description="The atom in the residue that will be replaced by the modification.",
+        description="The residue number in the sequence."
     )
-
-
+    Moiety_Attachment_Atom: str = Field(
+        ...,
+        description="The atom in the residue to which the moiety will be attached."
+    )
+    Atom_Number: str = Field(
+        ...,
+        description="The atom number in the residue."
+    )
+    Residue_Name_Glycam: str = Field(
+        ...,
+        description="The GLYCAM-specific name of the residue."
+    )
+    Residue_Number_Glycam: str = Field(
+        ...,
+        description="The GLYCAM-specific residue number."
+    )
+    Atom_Number_Glycam: str = Field(
+        ...,
+        description="The GLYCAM-specific atom number."
+    )
+    
 class Position_Modification_Options(BaseModel):
     Position: Modification_Position = ...
     Libraries: Optional[List[Moiety_Library_Names]] = None
