@@ -114,7 +114,7 @@ def execute(inputs: Evaluate_Inputs) -> tuple[Evaluate_Outputs, Notices]:
             else:
                 log.debug(f"Complex PDB file not found: {pdb_fpath}")
 
-    if len(service_notices) == 0:
+    if not len(service_notices):
         service_notices.addNotice(
             Brief="Evaluation Successful",
             Scope="Service",

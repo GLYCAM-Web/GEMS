@@ -15,6 +15,7 @@ class NoticeTypes(GemsStrEnum):
     error = 'Error'
 #    exit = 'Exit' # can't use 'exit' as a variable name.
     fatal = 'Exit'
+    info = 'Info'
 
 
 class Notice(BaseModel):
@@ -78,11 +79,6 @@ class Notices(BaseModel):
 
     __root__ : List[Notice] = None
     _defaultNoticeTypes : List[Notice] = PrivateAttr(default_factory=makeDefaultNoticesList)
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        #if self.__root__ is None:
-        #    self.__root__ = []
 
     def printDefaults(self, sendTo='logs', style='easyRead'):
         self.printNotices(sendTo=sendTo, style=style, whatToPrint='Defaults')
@@ -227,9 +223,11 @@ class Notices(BaseModel):
         return len(self.__root__)
     
     def extend(self, other):
-        if self.__root__ is None:
-            self.__root__ = []
-        self.__root__.extend(other.__root__)
+        if other.__root__ is not None:
+            if self.__root__ is None:
+                self.__root__ = []
+            self.__root__.extend(other.__root__)
+            log.debug(f"Extended Notices, now {self.__root__}")
     
     def append(self, notice: Notice):
         if self.__root__ is None:
