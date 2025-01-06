@@ -1,0 +1,38 @@
+{
+    "entity": {
+      "type": "Glycomimetics",
+      "services": {
+        "GlycoBuildOne": {
+          "type": "Build_Selected_Positions",
+          "inputs": { 
+            "resources": [
+              {
+                "resourceRole": "Complex",
+                "locationType": "filesystem-path-unix",
+                "resourceFormat": "chemical/pdb",
+                "payload": "/programs/gems/tests/inputs/2ZG1.pdb"
+              },
+              {
+                "resourceRole": "Selected_Modification_Options",
+                "locationType": "Payload",
+                "resourceFormat": "python-dict",
+                "payload": {
+                  "Position": { 
+                    "Residue_Name": "SIA",
+                    "Chain_Identifier": "A",
+                    "Residue_Number": "241",
+                    "Moiety_Attachment_Atom": "N5",
+                    "Atom_Number": "1679",
+                    "Residue_Name_Glycam": "DNeup5Aca",
+                    "Residue_Number_Glycam": "250",
+                    "Atom_Number_Glycam": "1720"
+                  },
+                  "Libraries": ["Aldehydes", "Ketones", "Sulfonyl_Halides"]
+                }      
+              }
+            ]
+          }
+        }
+      }
+    }
+  }

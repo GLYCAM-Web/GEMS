@@ -9,7 +9,7 @@ from gemsModules.common.main_api_notices import Notices
 from gemsModules.systemoperations.instance_config import InstanceConfig
 from gemsModules.logging.logger import Set_Up_Logging
 
-from .api import Evaluate_Inputs, Evaluate_Outputs
+from .api import Evaluate_Inputs, Evaluate_Outputs, PDB_File_Resource
 from ..common_api import Modification_Position
 
 from ...tasks import evaluate_wrapper
@@ -28,18 +28,29 @@ def execute(inputs: Evaluate_Inputs) -> tuple[Evaluate_Outputs, Notices]:
         if resource.resourceRole == "Complex":
             complex_pdb_resource = resource
             break
-
+        
     if not complex_pdb_resource:
-        # Append a notice, we can do nothing else.
-        service_notices.addNotice(
-            Brief="No Complex PDB Resource",
-            Scope="Service",
-            Messenger="Glycomimetics",
-            Type="Error",
-            Code="601",
-            Message="No Complex PDB was provided to Glycomimetics, nothing to do.",
-        )
-    else:
+        # check if there's an inputs.complex_path. Does this logic belong here? Seems like a job for the RDF.
+        if inputs.complex_path:
+            complex_pdb_resource = PDB_File_Resource(
+                locationType="filesystem-path-unix",
+                payload=inputs.complex_path,
+                resourceRole="Complex",
+            )
+            inputs.resources.append(complex_pdb_resource)
+        else:
+            # Append a notice, we can do nothing else.
+            service_notices.addNotice(
+                Brief="No Complex PDB Resource",
+                Scope="Service",
+                Messenger="Glycomimetics",
+                Type="Error",
+                Code="601",
+                Message="No Complex PDB was provided to Glycomimetics, nothing to do.",
+            )
+    
+    # check again, in case we just added it.
+    if complex_pdb_resource:
         # Evaluation
         if complex_pdb_resource.locationType != "filesystem-path-unix":
             service_notices.addNotice(

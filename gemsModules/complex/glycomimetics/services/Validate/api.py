@@ -60,13 +60,14 @@ class Validate_Inputs(BaseModel):
         description="UUID of Project",
     )
 
+    # TODO: should be receptor_path which is a local fs path
     receptor: Optional[str] = Field(
         None,
         title="Receptor",
         description="Receptor PDB file",
     )
 
-    # TODO: see Build.api too and fix this
+    # TODO: see Build.api too, we need to use service specific resources for better constraints.
     # resources: Validate_Resources = Validate_Resources()
     resources: Resources = Resources()
 

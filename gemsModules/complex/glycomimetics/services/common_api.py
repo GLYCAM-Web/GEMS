@@ -28,7 +28,7 @@ class PDB_File_Resource(Resource):
         description="Supported formats will vary with each Entity.",
     )
     resourceRole: Literal[
-        "Complex_Input", "Glycomimetics_Output", "Ligand", "Receptor"
+        "Complex", "Glycomimetics_Output", "Ligand", "Receptor"
     ] = Field(
         ...,
         title="Resource Role",

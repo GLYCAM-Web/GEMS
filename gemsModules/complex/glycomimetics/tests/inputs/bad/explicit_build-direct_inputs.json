@@ -8,11 +8,14 @@
           "complex_PDB_Filename": "/programs/gems/tests/inputs/2ZG1.pdb",
           "Selected_Modification_Options": {
             "Position": {
-              "Residue_Identifier": "241",
               "Residue_Name": "SIA",
               "Chain_Identifier": "A",
-              "Attachment_Atom": "C9",
-              "Replaced_Atom": "O9"
+              "Residue_Number": "241",
+              "Moiety_Attachment_Atom": "N5",
+              "Atom_Number": "1679",
+              "Residue_Name_Glycam": "DNeup5Aca",
+              "Residue_Number_Glycam": "250",
+              "Atom_Number_Glycam": "1720"
             },
             "Libraries": ["Aldehydes", "Ketones", "Sulfonyl_Halides"]
           }

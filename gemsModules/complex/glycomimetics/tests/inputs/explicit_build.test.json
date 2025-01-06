@@ -26,7 +26,8 @@
                   "Residue_Name_Glycam": "DGlcpNAcb", 
                   "Residue_Number_Glycam": "324", 
                   "Atom_Number_Glycam": "2531"
-                }
+                },
+                "Libraries": ["Aldehydes", "Ketones", "Sulfonyl_Halides"]
               }      
             }
           ]

@@ -21,7 +21,7 @@ def execute(position: Modification_Position, project_dir: Path, GlycoWebtool_Pat
     if position is None:
         raise RuntimeError("No valid Position selected.")
     
-    # TODO: Libraries from API Something like this maybe? 
+    # TODO: Libraries from API. Something like this maybe? 
     #   libraries_str = "-".join([str(GW_Path / "/library/{lib}") for lib in position.Moiety_Library_Names])
     # This is based off an example input from the GM Webtool.
     libraries_str = str(GlycoWebtool_Path / "library/test1-pdbqt")
@@ -31,7 +31,9 @@ def execute(position: Modification_Position, project_dir: Path, GlycoWebtool_Pat
     # Glycomimetics input file format is two lines:
     complex_str = "ComplexPdb:cocomplex.pdbqt"
     #open_valence = f"OpenValence:{position.Residue_Identifier}_{position.Chain_Identifier}_{position.Attachment_Atom}_{position.Replaced_Atom}-{libraries_str}"
-    open_valence = f"OpenValence:{position.Residue_Number_Glycam}_{position.Chain_Identifier}_{position.Moiety_Attachment_Atom}-{position.Atom_Number_Glycam}-{libraries_str}"
+    # From Yao: Build is no longer using the Replaced_Atom field from API right now, but we still need to pass a string for the 4th field.
+    open_valence = f"OpenValence:{position.Residue_Number}_{position.Chain_Identifier}_{position.Moiety_Attachment_Atom}_ABC-{libraries_str}"
+    # Seems like this is being ignored now?
     natural_charge = f"naturalCharge:{charge_str}"
     
     # warn if the input file already exists

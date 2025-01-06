@@ -15,7 +15,7 @@ log = Set_Up_Logging(__name__)
 
 GLYCOMIMETICS_PROJECTS_ROOT = InstanceConfig().get_filesystem_path("Glycomimetics")
 
-
+# TODO: Determine project type, and return status of that project type
 def execute(inputs: Status_Inputs) -> Status_Outputs:
     log.debug(f"Status resources at servicing: {inputs}")
     service_outputs = Status_Outputs()

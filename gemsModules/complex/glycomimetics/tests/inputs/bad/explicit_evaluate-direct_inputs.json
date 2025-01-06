@@ -1,0 +1,13 @@
+{
+    "entity": {
+      "type": "Glycomimetics",
+      "services": {
+        "evaluation_of_pdb": {
+          "type": "Evaluate",
+          "inputs": { 
+            "complex_path": "/programs/gems/tests/inputs/2ZG1.pdb"
+          }
+        }
+      }
+    }
+  }

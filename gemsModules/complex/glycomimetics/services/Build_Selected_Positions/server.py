@@ -45,8 +45,9 @@ def Serve(
     try:
         response.outputs = execute(service.inputs)
         
+        ## TODO: we need a status service to check if the job is done - cannot delay response returns.
         # wait for out.txt to be created
-        time.sleep(2)
+        # time.sleep(2)
         # check if Segmentation fault in out.txt
         # out_txt = project_dir / "out.txt"
         # if out_txt.exists():

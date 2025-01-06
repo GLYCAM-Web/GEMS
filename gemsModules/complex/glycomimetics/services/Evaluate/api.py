@@ -47,10 +47,11 @@ class Evaluate_Inputs(BaseModel):
         description="UUID of Project",
     )
 
-    receptor_path: Optional[str] = Field(
+    # TODO: make sure to update resources with this payload if provided this way
+    complex_path: Optional[str] = Field(
         None,
-        title="Receptor",
-        description="Receptor PDB file",
+        title="Complex Path",
+        description="Complex PDB file",
     )
 
     # Evaluate's real request always needs an input PDB, should we be able to instantiate it blank?
